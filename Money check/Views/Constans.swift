@@ -1,0 +1,81 @@
+//
+//  Constans.swift
+//  Money check
+//
+//  Created by Roman on 01.08.2021.
+//
+
+import Foundation
+import UIKit
+import EasyPeasy
+
+struct Constants {
+    
+    //MARK:- Main View
+    var income: Float = 0
+    var expense: Float = 0
+    var balance: Float = 0
+    
+    func setupNavButon(image: UIImage, selector: Selector)->UIBarButtonItem {
+        let navBarItem = UIBarButtonItem(image: image, style: .plain, target: self, action: selector)
+        return navBarItem
+    }
+    
+    func viewWithbutton(color: UIColor, name: String, selector: Selector) -> UIView {
+        let view = UIView()
+        let button = UIButton(color: color, name: name)
+        button.addTarget(self, action: selector, for: .touchUpInside)
+        view.addSubview(button)
+        button.easy.layout(Center(),Edges(5))
+        return view
+    }
+    
+    mutating func calculatingValue() {
+        let items = RealmManager.shared.realm.objects(CellItems.self)
+        income = 0
+        expense = 0
+        for item in items {
+            if item.type == 0 {
+                income += item.value
+            } else {
+                expense += item.value
+            }
+            balance = income - expense
+        }
+    }
+    
+    func separatedNumber(_ number: Any) -> String {
+        guard let itIsANumber = number as? NSNumber else { return "Not a number" }
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.groupingSeparator = " "
+        formatter.decimalSeparator = ","
+        return formatter.string(from: itIsANumber)!
+    }
+    //MARK:- Adding new items view
+    
+    func label(text: String) -> UILabel {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.text = text
+        return label
+    }
+    
+    let dateView = UIDatePicker(date: .dateAndTime)
+    let typePick: UISegmentedControl = {
+        let items = ["Income", "Expense"]
+        let sc = UISegmentedControl(items: items)
+        sc.selectedSegmentIndex = 0
+        sc.layer.cornerRadius = 16
+        sc.backgroundColor = .black
+        sc.selectedSegmentTintColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        sc.setTitleTextAttributes([
+            NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.bold)
+        ], for: .normal)
+        sc.easy.layout(Height(40),Width(220))
+        return sc
+    }()
+    
+}
+

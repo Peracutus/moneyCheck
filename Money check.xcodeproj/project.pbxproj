@@ -3,29 +3,113 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		931F1FF12E9875EEA97EE12C /* Pods_Money_check.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4841EFB4122497297514F37A /* Pods_Money_check.framework */; };
+		B50786CF270027E200F9FD30 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50786CE270027E200F9FD30 /* UIFont.swift */; };
+		B50786D127004D7800F9FD30 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50786D027004D7800F9FD30 /* UIColor.swift */; };
+		B50786D327004D8400F9FD30 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50786D227004D8400F9FD30 /* UILabel.swift */; };
+		B50786D527005EA100F9FD30 /* UIDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50786D427005EA100F9FD30 /* UIDatePicker.swift */; };
+		B50786D82700FFF900F9FD30 /* TasksVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50786D72700FFF900F9FD30 /* TasksVCCell.swift */; };
+		B50786DB27010A9500F9FD30 /* PressButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50786DA27010A9500F9FD30 /* PressButtonProtocol.swift */; };
+		B50786DD2702FCB000F9FD30 /* MenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50786DC2702FCAF00F9FD30 /* MenuTableCell.swift */; };
+		B50786DF2703246100F9FD30 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50786DE2703246100F9FD30 /* MenuVC.swift */; };
+		B50786E1270324AD00F9FD30 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50786E0270324AD00F9FD30 /* MenuModel.swift */; };
+		B50786E327032BA300F9FD30 /* CategoriesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50786E227032BA300F9FD30 /* CategoriesCollectionView.swift */; };
+		B50786E52703498400F9FD30 /* CategoriesCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50786E42703498400F9FD30 /* CategoriesCollectionCell.swift */; };
+		B50786E72703936700F9FD30 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50786E62703936700F9FD30 /* CustomView.swift */; };
+		B50786E927039C0400F9FD30 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50786E827039C0400F9FD30 /* UIViewController.swift */; };
+		B50786EC27039D0F00F9FD30 /* PopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50786EB27039D0F00F9FD30 /* PopUpVC.swift */; };
+		B538CDA326F641E80010264D /* ChartBalanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538CDA226F641E70010264D /* ChartBalanceVC.swift */; };
+		B538CDA926FCF7A50010264D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538CDA826FCF7A50010264D /* MainTabBarController.swift */; };
+		B538CDAE26FD13D50010264D /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538CDAD26FD13D50010264D /* UIStackView.swift */; };
+		B538CDB026FDF4EB0010264D /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538CDAF26FDF4EB0010264D /* UIButton.swift */; };
+		B538CDB226FDFD9B0010264D /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538CDB126FDFD9B0010264D /* UITextField.swift */; };
+		B538CDB426FE05E40010264D /* TaskManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538CDB326FE05E40010264D /* TaskManagerVC.swift */; };
+		B540EA032704D97100C2A17A /* cellForCreateCat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B540EA022704D97100C2A17A /* cellForCreateCat.swift */; };
+		B540EA0527062D9600C2A17A /* CategoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B540EA0427062D9600C2A17A /* CategoryProtocol.swift */; };
+		B54ECCF426BAE88200A7640C /* empty-face.json in Resources */ = {isa = PBXBuildFile; fileRef = B54ECCF326BAE88200A7640C /* empty-face.json */; };
+		B54ECCF826BC551600A7640C /* MainVCTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54ECCF726BC551600A7640C /* MainVCTableView.swift */; };
+		B56C70D1272DA2C400D595BC /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C70D0272DA2C400D595BC /* RealmManager.swift */; };
+		B56C70D5272DC6D300D595BC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B56C70D4272DC6D300D595BC /* .gitignore */; };
+		B56C70D7272DD66100D595BC /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C70D6272DD66100D595BC /* TaskModel.swift */; };
+		B56C70D9272DE0D700D595BC /*  AlertSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C70D8272DE0D700D595BC /*  AlertSave.swift */; };
 		B5905AB326B67C340055617F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5905AB226B67C340055617F /* AppDelegate.swift */; };
 		B5905AB526B67C340055617F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5905AB426B67C340055617F /* SceneDelegate.swift */; };
-		B5905AB726B67C340055617F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5905AB626B67C340055617F /* ViewController.swift */; };
-		B5905ABA26B67C340055617F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5905AB826B67C340055617F /* Main.storyboard */; };
+		B5905AB726B67C340055617F /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5905AB626B67C340055617F /* MainVC.swift */; };
 		B5905ABD26B67C350055617F /* Money_check.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5905ABB26B67C350055617F /* Money_check.xcdatamodeld */; };
 		B5905ABF26B67C370055617F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5905ABE26B67C370055617F /* Assets.xcassets */; };
 		B5905AC226B67C370055617F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5905AC026B67C370055617F /* LaunchScreen.storyboard */; };
+		B5905ACD26B67D510055617F /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5905ACC26B67D510055617F /* Constans.swift */; };
+		B5905AD026B69FAA0055617F /* MainCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5905ACF26B69FAA0055617F /* MainCustomCell.swift */; };
+		B5905AD226B6B4C80055617F /* AddingNewCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5905AD126B6B4C80055617F /* AddingNewCellVC.swift */; };
+		B5905AD726B826990055617F /* KeyboardAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5905AD626B826990055617F /* KeyboardAppearance.swift */; };
+		B5905AD926B86DEC0055617F /* RealmCellItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5905AD826B86DEC0055617F /* RealmCellItems.swift */; };
+		B5E545612707A41700C36C7B /* MainDateSorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E545602707A41700C36C7B /* MainDateSorting.swift */; };
+		B5E545642708818D00C36C7B /* TaskOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E545632708818D00C36C7B /* TaskOptionsVC.swift */; };
+		B5E545692708873B00C36C7B /* CustomTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E545682708873B00C36C7B /* CustomTaskCell.swift */; };
+		B5E5456C2708A9F400C36C7B /* HeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5456B2708A9F400C36C7B /* HeaderTableView.swift */; };
+		B5E5456E270DAB9000C36C7B /* ColorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5456D270DAB9000C36C7B /* ColorVC.swift */; };
+		B5E54570270DAF2200C36C7B /* ColorTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5456F270DAF2200C36C7B /* ColorTVCell.swift */; };
+		B5E54573270DB9E400C36C7B /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E54572270DB9E400C36C7B /* AlertDate.swift */; };
+		B5E54575270DC60800C36C7B /* AlertForCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E54574270DC60800C36C7B /* AlertForCellName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33476BDEA1DB7FAC8CB1FDD5 /* Pods-Money check.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Money check.debug.xcconfig"; path = "Target Support Files/Pods-Money check/Pods-Money check.debug.xcconfig"; sourceTree = "<group>"; };
+		4841EFB4122497297514F37A /* Pods_Money_check.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Money_check.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B50786CE270027E200F9FD30 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		B50786D027004D7800F9FD30 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		B50786D227004D8400F9FD30 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		B50786D427005EA100F9FD30 /* UIDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDatePicker.swift; sourceTree = "<group>"; };
+		B50786D72700FFF900F9FD30 /* TasksVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksVCCell.swift; sourceTree = "<group>"; };
+		B50786DA27010A9500F9FD30 /* PressButtonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressButtonProtocol.swift; sourceTree = "<group>"; };
+		B50786DC2702FCAF00F9FD30 /* MenuTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableCell.swift; sourceTree = "<group>"; };
+		B50786DE2703246100F9FD30 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		B50786E0270324AD00F9FD30 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		B50786E227032BA300F9FD30 /* CategoriesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionView.swift; sourceTree = "<group>"; };
+		B50786E42703498400F9FD30 /* CategoriesCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionCell.swift; sourceTree = "<group>"; };
+		B50786E62703936700F9FD30 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		B50786E827039C0400F9FD30 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		B50786EB27039D0F00F9FD30 /* PopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpVC.swift; sourceTree = "<group>"; };
+		B538CDA226F641E70010264D /* ChartBalanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartBalanceVC.swift; sourceTree = "<group>"; };
+		B538CDA826FCF7A50010264D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		B538CDAD26FD13D50010264D /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		B538CDAF26FDF4EB0010264D /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		B538CDB126FDFD9B0010264D /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		B538CDB326FE05E40010264D /* TaskManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerVC.swift; sourceTree = "<group>"; };
+		B540EA022704D97100C2A17A /* cellForCreateCat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellForCreateCat.swift; sourceTree = "<group>"; };
+		B540EA0427062D9600C2A17A /* CategoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryProtocol.swift; sourceTree = "<group>"; };
+		B54ECCF326BAE88200A7640C /* empty-face.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "empty-face.json"; sourceTree = "<group>"; };
+		B54ECCF726BC551600A7640C /* MainVCTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCTableView.swift; sourceTree = "<group>"; };
+		B56C70D0272DA2C400D595BC /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		B56C70D4272DC6D300D595BC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		B56C70D6272DD66100D595BC /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		B56C70D8272DE0D700D595BC /*  AlertSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " AlertSave.swift"; sourceTree = "<group>"; };
 		B5905AAF26B67C340055617F /* Money check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5905AB226B67C340055617F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5905AB426B67C340055617F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B5905AB626B67C340055617F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B5905AB926B67C340055617F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B5905AB626B67C340055617F /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		B5905ABC26B67C350055617F /* Money_check.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Money_check.xcdatamodel; sourceTree = "<group>"; };
 		B5905ABE26B67C370055617F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5905AC126B67C370055617F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5905AC326B67C370055617F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5905ACC26B67D510055617F /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
+		B5905ACF26B69FAA0055617F /* MainCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainCustomCell.swift; path = "Money check/Model/Cells/MainCustomCell.swift"; sourceTree = SOURCE_ROOT; };
+		B5905AD126B6B4C80055617F /* AddingNewCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewCellVC.swift; sourceTree = "<group>"; };
+		B5905AD626B826990055617F /* KeyboardAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAppearance.swift; sourceTree = "<group>"; };
+		B5905AD826B86DEC0055617F /* RealmCellItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCellItems.swift; sourceTree = "<group>"; };
+		B5E545602707A41700C36C7B /* MainDateSorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDateSorting.swift; sourceTree = "<group>"; };
+		B5E545632708818D00C36C7B /* TaskOptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOptionsVC.swift; sourceTree = "<group>"; };
+		B5E545682708873B00C36C7B /* CustomTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTaskCell.swift; sourceTree = "<group>"; };
+		B5E5456B2708A9F400C36C7B /* HeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableView.swift; sourceTree = "<group>"; };
+		B5E5456D270DAB9000C36C7B /* ColorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorVC.swift; sourceTree = "<group>"; };
+		B5E5456F270DAF2200C36C7B /* ColorTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTVCell.swift; sourceTree = "<group>"; };
+		B5E54572270DB9E400C36C7B /* AlertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDate.swift; sourceTree = "<group>"; };
+		B5E54574270DC60800C36C7B /* AlertForCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertForCellName.swift; sourceTree = "<group>"; };
+		FB501D9985830BD8E5DAE022 /* Pods-Money check.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Money check.release.xcconfig"; path = "Target Support Files/Pods-Money check/Pods-Money check.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +117,153 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				931F1FF12E9875EEA97EE12C /* Pods_Money_check.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C48893F4894BC4CAD67166E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4841EFB4122497297514F37A /* Pods_Money_check.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		82C78C3631E6772E95A95D20 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33476BDEA1DB7FAC8CB1FDD5 /* Pods-Money check.debug.xcconfig */,
+				FB501D9985830BD8E5DAE022 /* Pods-Money check.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B50786D62700FFCB00F9FD30 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B5905ACF26B69FAA0055617F /* MainCustomCell.swift */,
+				B50786DC2702FCAF00F9FD30 /* MenuTableCell.swift */,
+				B50786E42703498400F9FD30 /* CategoriesCollectionCell.swift */,
+				B540EA022704D97100C2A17A /* cellForCreateCat.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B50786D927010A5C00F9FD30 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B50786DA27010A9500F9FD30 /* PressButtonProtocol.swift */,
+				B540EA0427062D9600C2A17A /* CategoryProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B50786EA27039C7900F9FD30 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				B5905AB626B67C340055617F /* MainVC.swift */,
+				B5905AD126B6B4C80055617F /* AddingNewCellVC.swift */,
+				B50786E227032BA300F9FD30 /* CategoriesCollectionView.swift */,
+				B50786EB27039D0F00F9FD30 /* PopUpVC.swift */,
+				B538CDA226F641E70010264D /* ChartBalanceVC.swift */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
+		B538CD9F26F1F7CF0010264D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B56C70D0272DA2C400D595BC /* RealmManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B538CDA626FA7C3A0010264D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B5905ABE26B67C370055617F /* Assets.xcassets */,
+				B54ECCF226BAE88200A7640C /* Animations */,
+				B5905AC026B67C370055617F /* LaunchScreen.storyboard */,
+				B5905AC326B67C370055617F /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B538CDA726FA7C6D0010264D /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				B5905AB226B67C340055617F /* AppDelegate.swift */,
+				B5905AB426B67C340055617F /* SceneDelegate.swift */,
+			);
+			path = Applications;
+			sourceTree = "<group>";
+		};
+		B538CDAA26FD0F9A0010264D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B56C70CF272DA1CC00D595BC /* Realm */,
+				B5E5456A2708A9DB00C36C7B /* Header */,
+				B5E545672708872800C36C7B /* TaskCells */,
+				B50786D62700FFCB00F9FD30 /* Cells */,
+				B50786E0270324AD00F9FD30 /* MenuModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B538CDAB26FD13B90010264D /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				B538CDAC26FD13C20010264D /* UIKit */,
+				B5E545602707A41700C36C7B /* MainDateSorting.swift */,
+				B54ECCF726BC551600A7640C /* MainVCTableView.swift */,
+				B5905AD626B826990055617F /* KeyboardAppearance.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		B538CDAC26FD13C20010264D /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				B538CDAD26FD13D50010264D /* UIStackView.swift */,
+				B538CDAF26FDF4EB0010264D /* UIButton.swift */,
+				B538CDB126FDFD9B0010264D /* UITextField.swift */,
+				B50786CE270027E200F9FD30 /* UIFont.swift */,
+				B50786D027004D7800F9FD30 /* UIColor.swift */,
+				B50786D227004D8400F9FD30 /* UILabel.swift */,
+				B50786D427005EA100F9FD30 /* UIDatePicker.swift */,
+				B50786E827039C0400F9FD30 /* UIViewController.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		B54ECCF226BAE88200A7640C /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				B54ECCF326BAE88200A7640C /* empty-face.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		B56C70CF272DA1CC00D595BC /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				B5905AD826B86DEC0055617F /* RealmCellItems.swift */,
+				B56C70D6272DD66100D595BC /* TaskModel.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		B5905AA626B67C340055617F = {
 			isa = PBXGroup;
 			children = (
+				B56C70D4272DC6D300D595BC /* .gitignore */,
 				B5905AB126B67C340055617F /* Money check */,
 				B5905AB026B67C340055617F /* Products */,
+				82C78C3631E6772E95A95D20 /* Pods */,
+				4C48893F4894BC4CAD67166E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +278,76 @@
 		B5905AB126B67C340055617F /* Money check */ = {
 			isa = PBXGroup;
 			children = (
-				B5905AB226B67C340055617F /* AppDelegate.swift */,
-				B5905AB426B67C340055617F /* SceneDelegate.swift */,
-				B5905AB626B67C340055617F /* ViewController.swift */,
-				B5905AB826B67C340055617F /* Main.storyboard */,
-				B5905ABE26B67C370055617F /* Assets.xcassets */,
-				B5905AC026B67C370055617F /* LaunchScreen.storyboard */,
-				B5905AC326B67C370055617F /* Info.plist */,
+				B538CDA726FA7C6D0010264D /* Applications */,
+				B538CDA626FA7C3A0010264D /* Resources */,
+				B50786D927010A5C00F9FD30 /* Protocols */,
+				B538CD9F26F1F7CF0010264D /* Services */,
+				B538CDAB26FD13B90010264D /* Extentions */,
+				B538CDAA26FD0F9A0010264D /* Model */,
+				B5905AC926B67CB50055617F /* Views */,
+				B5905ADA26B86FEB0055617F /* Controllers */,
 				B5905ABB26B67C350055617F /* Money_check.xcdatamodeld */,
 			);
 			path = "Money check";
+			sourceTree = "<group>";
+		};
+		B5905AC926B67CB50055617F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5905ACC26B67D510055617F /* Constans.swift */,
+				B50786E62703936700F9FD30 /* CustomView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B5905ADA26B86FEB0055617F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B5E545622708811400C36C7B /* Tasks */,
+				B50786EA27039C7900F9FD30 /* MainVC */,
+				B538CDA826FCF7A50010264D /* MainTabBarController.swift */,
+				B50786DE2703246100F9FD30 /* MenuVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B5E545622708811400C36C7B /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				B538CDB326FE05E40010264D /* TaskManagerVC.swift */,
+				B5E545632708818D00C36C7B /* TaskOptionsVC.swift */,
+				B5E5456D270DAB9000C36C7B /* ColorVC.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		B5E545672708872800C36C7B /* TaskCells */ = {
+			isa = PBXGroup;
+			children = (
+				B5E54571270DB9D000C36C7B /* Alerts */,
+				B5E545682708873B00C36C7B /* CustomTaskCell.swift */,
+				B50786D72700FFF900F9FD30 /* TasksVCCell.swift */,
+				B5E5456F270DAF2200C36C7B /* ColorTVCell.swift */,
+			);
+			path = TaskCells;
+			sourceTree = "<group>";
+		};
+		B5E5456A2708A9DB00C36C7B /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				B5E5456B2708A9F400C36C7B /* HeaderTableView.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		B5E54571270DB9D000C36C7B /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				B5E54572270DB9E400C36C7B /* AlertDate.swift */,
+				B5E54574270DC60800C36C7B /* AlertForCellName.swift */,
+				B56C70D8272DE0D700D595BC /*  AlertSave.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +357,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5905AC626B67C370055617F /* Build configuration list for PBXNativeTarget "Money check" */;
 			buildPhases = (
+				19671DABC31C627CAFF2055A /* [CP] Check Pods Manifest.lock */,
 				B5905AAB26B67C340055617F /* Sources */,
 				B5905AAC26B67C340055617F /* Frameworks */,
 				B5905AAD26B67C340055617F /* Resources */,
+				61A18CB233EFED70B66036B8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,37 +409,111 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B56C70D5272DC6D300D595BC /* .gitignore in Resources */,
 				B5905AC226B67C370055617F /* LaunchScreen.storyboard in Resources */,
 				B5905ABF26B67C370055617F /* Assets.xcassets in Resources */,
-				B5905ABA26B67C340055617F /* Main.storyboard in Resources */,
+				B54ECCF426BAE88200A7640C /* empty-face.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19671DABC31C627CAFF2055A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Money check-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61A18CB233EFED70B66036B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Money check/Pods-Money check-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Money check/Pods-Money check-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Money check/Pods-Money check-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B5905AAB26B67C340055617F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5905AB726B67C340055617F /* ViewController.swift in Sources */,
+				B5905AD226B6B4C80055617F /* AddingNewCellVC.swift in Sources */,
+				B538CDAE26FD13D50010264D /* UIStackView.swift in Sources */,
+				B54ECCF826BC551600A7640C /* MainVCTableView.swift in Sources */,
+				B50786D82700FFF900F9FD30 /* TasksVCCell.swift in Sources */,
+				B5905AB726B67C340055617F /* MainVC.swift in Sources */,
+				B56C70D1272DA2C400D595BC /* RealmManager.swift in Sources */,
+				B56C70D7272DD66100D595BC /* TaskModel.swift in Sources */,
+				B5E545642708818D00C36C7B /* TaskOptionsVC.swift in Sources */,
+				B50786EC27039D0F00F9FD30 /* PopUpVC.swift in Sources */,
+				B5905AD726B826990055617F /* KeyboardAppearance.swift in Sources */,
+				B50786E327032BA300F9FD30 /* CategoriesCollectionView.swift in Sources */,
+				B5E54570270DAF2200C36C7B /* ColorTVCell.swift in Sources */,
+				B538CDB026FDF4EB0010264D /* UIButton.swift in Sources */,
+				B50786D127004D7800F9FD30 /* UIColor.swift in Sources */,
+				B5E545612707A41700C36C7B /* MainDateSorting.swift in Sources */,
+				B50786DD2702FCB000F9FD30 /* MenuTableCell.swift in Sources */,
+				B538CDB426FE05E40010264D /* TaskManagerVC.swift in Sources */,
 				B5905ABD26B67C350055617F /* Money_check.xcdatamodeld in Sources */,
+				B5905ACD26B67D510055617F /* Constans.swift in Sources */,
+				B5E545692708873B00C36C7B /* CustomTaskCell.swift in Sources */,
+				B50786E52703498400F9FD30 /* CategoriesCollectionCell.swift in Sources */,
+				B56C70D9272DE0D700D595BC /*  AlertSave.swift in Sources */,
+				B50786DF2703246100F9FD30 /* MenuVC.swift in Sources */,
+				B538CDB226FDFD9B0010264D /* UITextField.swift in Sources */,
 				B5905AB326B67C340055617F /* AppDelegate.swift in Sources */,
+				B50786D327004D8400F9FD30 /* UILabel.swift in Sources */,
+				B5E54575270DC60800C36C7B /* AlertForCellName.swift in Sources */,
+				B5E54573270DB9E400C36C7B /* AlertDate.swift in Sources */,
+				B50786D527005EA100F9FD30 /* UIDatePicker.swift in Sources */,
+				B5E5456C2708A9F400C36C7B /* HeaderTableView.swift in Sources */,
+				B540EA0527062D9600C2A17A /* CategoryProtocol.swift in Sources */,
+				B538CDA326F641E80010264D /* ChartBalanceVC.swift in Sources */,
+				B50786E927039C0400F9FD30 /* UIViewController.swift in Sources */,
+				B5E5456E270DAB9000C36C7B /* ColorVC.swift in Sources */,
+				B50786E72703936700F9FD30 /* CustomView.swift in Sources */,
+				B540EA032704D97100C2A17A /* cellForCreateCat.swift in Sources */,
+				B5905AD926B86DEC0055617F /* RealmCellItems.swift in Sources */,
+				B50786CF270027E200F9FD30 /* UIFont.swift in Sources */,
+				B5905AD026B69FAA0055617F /* MainCustomCell.swift in Sources */,
+				B50786E1270324AD00F9FD30 /* MenuModel.swift in Sources */,
+				B50786DB27010A9500F9FD30 /* PressButtonProtocol.swift in Sources */,
 				B5905AB526B67C340055617F /* SceneDelegate.swift in Sources */,
+				B538CDA926FCF7A50010264D /* MainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B5905AB826B67C340055617F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B5905AB926B67C340055617F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B5905AC026B67C370055617F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -287,12 +643,13 @@
 		};
 		B5905AC726B67C370055617F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33476BDEA1DB7FAC8CB1FDD5 /* Pods-Money check.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G2CX2FAAM8;
-				INFOPLIST_FILE = "Money check/Info.plist";
+				INFOPLIST_FILE = "Money check/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,12 +663,13 @@
 		};
 		B5905AC826B67C370055617F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB501D9985830BD8E5DAE022 /* Pods-Money check.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G2CX2FAAM8;
-				INFOPLIST_FILE = "Money check/Info.plist";
+				INFOPLIST_FILE = "Money check/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
