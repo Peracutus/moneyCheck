@@ -47,6 +47,12 @@
 		B5905AD226B6B4C80055617F /* AddingNewCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5905AD126B6B4C80055617F /* AddingNewCellVC.swift */; };
 		B5905AD726B826990055617F /* KeyboardAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5905AD626B826990055617F /* KeyboardAppearance.swift */; };
 		B5905AD926B86DEC0055617F /* RealmCellItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5905AD826B86DEC0055617F /* RealmCellItems.swift */; };
+		B5C79B2C27342E76007D649E /* basket.json in Resources */ = {isa = PBXBuildFile; fileRef = B5C79B2B27342E76007D649E /* basket.json */; };
+		B5C79B2F27342F45007D649E /* case.json in Resources */ = {isa = PBXBuildFile; fileRef = B5C79B2D27342F45007D649E /* case.json */; };
+		B5C79B3027342F45007D649E /* graphic.json in Resources */ = {isa = PBXBuildFile; fileRef = B5C79B2E27342F45007D649E /* graphic.json */; };
+		B5C79B3227342F78007D649E /* IntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C79B3127342F78007D649E /* IntroductionView.swift */; };
+		B5C79B3427343419007D649E /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C79B3327343419007D649E /* InfoCell.swift */; };
+		B5C79B362734391F007D649E /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C79B352734391F007D649E /* InfoViewModel.swift */; };
 		B5E545612707A41700C36C7B /* MainDateSorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E545602707A41700C36C7B /* MainDateSorting.swift */; };
 		B5E545642708818D00C36C7B /* TaskOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E545632708818D00C36C7B /* TaskOptionsVC.swift */; };
 		B5E545692708873B00C36C7B /* CustomTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E545682708873B00C36C7B /* CustomTaskCell.swift */; };
@@ -101,6 +107,12 @@
 		B5905AD126B6B4C80055617F /* AddingNewCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewCellVC.swift; sourceTree = "<group>"; };
 		B5905AD626B826990055617F /* KeyboardAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAppearance.swift; sourceTree = "<group>"; };
 		B5905AD826B86DEC0055617F /* RealmCellItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCellItems.swift; sourceTree = "<group>"; };
+		B5C79B2B27342E76007D649E /* basket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = basket.json; sourceTree = "<group>"; };
+		B5C79B2D27342F45007D649E /* case.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = case.json; sourceTree = "<group>"; };
+		B5C79B2E27342F45007D649E /* graphic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = graphic.json; sourceTree = "<group>"; };
+		B5C79B3127342F78007D649E /* IntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionView.swift; sourceTree = "<group>"; };
+		B5C79B3327343419007D649E /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		B5C79B352734391F007D649E /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
 		B5E545602707A41700C36C7B /* MainDateSorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDateSorting.swift; sourceTree = "<group>"; };
 		B5E545632708818D00C36C7B /* TaskOptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOptionsVC.swift; sourceTree = "<group>"; };
 		B5E545682708873B00C36C7B /* CustomTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTaskCell.swift; sourceTree = "<group>"; };
@@ -148,6 +160,7 @@
 				B50786DC2702FCAF00F9FD30 /* MenuTableCell.swift */,
 				B50786E42703498400F9FD30 /* CategoriesCollectionCell.swift */,
 				B540EA022704D97100C2A17A /* cellForCreateCat.swift */,
+				B5C79B3327343419007D649E /* InfoCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -209,6 +222,7 @@
 				B5E545672708872800C36C7B /* TaskCells */,
 				B50786D62700FFCB00F9FD30 /* Cells */,
 				B50786E0270324AD00F9FD30 /* MenuModel.swift */,
+				B5C79B352734391F007D649E /* InfoViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,6 +257,9 @@
 			isa = PBXGroup;
 			children = (
 				B54ECCF326BAE88200A7640C /* empty-face.json */,
+				B5C79B2D27342F45007D649E /* case.json */,
+				B5C79B2E27342F45007D649E /* graphic.json */,
+				B5C79B2B27342E76007D649E /* basket.json */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -306,6 +323,7 @@
 				B5E545622708811400C36C7B /* Tasks */,
 				B50786EA27039C7900F9FD30 /* MainVC */,
 				B538CDA826FCF7A50010264D /* MainTabBarController.swift */,
+				B5C79B3127342F78007D649E /* IntroductionView.swift */,
 				B50786DE2703246100F9FD30 /* MenuVC.swift */,
 			);
 			path = Controllers;
@@ -409,7 +427,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C79B2C27342E76007D649E /* basket.json in Resources */,
+				B5C79B2F27342F45007D649E /* case.json in Resources */,
 				B56C70D5272DC6D300D595BC /* .gitignore in Resources */,
+				B5C79B3027342F45007D649E /* graphic.json in Resources */,
 				B5905AC226B67C370055617F /* LaunchScreen.storyboard in Resources */,
 				B5905ABF26B67C370055617F /* Assets.xcassets in Resources */,
 				B54ECCF426BAE88200A7640C /* empty-face.json in Resources */,
@@ -479,10 +500,12 @@
 				B5E54570270DAF2200C36C7B /* ColorTVCell.swift in Sources */,
 				B538CDB026FDF4EB0010264D /* UIButton.swift in Sources */,
 				B50786D127004D7800F9FD30 /* UIColor.swift in Sources */,
+				B5C79B3427343419007D649E /* InfoCell.swift in Sources */,
 				B5E545612707A41700C36C7B /* MainDateSorting.swift in Sources */,
 				B50786DD2702FCB000F9FD30 /* MenuTableCell.swift in Sources */,
 				B538CDB426FE05E40010264D /* TaskManagerVC.swift in Sources */,
 				B5905ABD26B67C350055617F /* Money_check.xcdatamodeld in Sources */,
+				B5C79B3227342F78007D649E /* IntroductionView.swift in Sources */,
 				B5905ACD26B67D510055617F /* Constans.swift in Sources */,
 				B5E545692708873B00C36C7B /* CustomTaskCell.swift in Sources */,
 				B50786E52703498400F9FD30 /* CategoriesCollectionCell.swift in Sources */,
@@ -503,6 +526,7 @@
 				B540EA032704D97100C2A17A /* cellForCreateCat.swift in Sources */,
 				B5905AD926B86DEC0055617F /* RealmCellItems.swift in Sources */,
 				B50786CF270027E200F9FD30 /* UIFont.swift in Sources */,
+				B5C79B362734391F007D649E /* InfoViewModel.swift in Sources */,
 				B5905AD026B69FAA0055617F /* MainCustomCell.swift in Sources */,
 				B50786E1270324AD00F9FD30 /* MenuModel.swift in Sources */,
 				B50786DB27010A9500F9FD30 /* PressButtonProtocol.swift in Sources */,

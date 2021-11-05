@@ -13,7 +13,7 @@ import RealmSwift
 class AddingNewCellVC: UIViewController {
     
     private let realm = try! Realm()
-    private let confirmBtn = UIButton(color: .orangeColor()!, name: "Save")
+    private let confirmBtn = UIButton(color: .orangeColor, name: "Save")
     private var constants = Constants()
     
     let textInputTitle = UITextField(placeholder: "Enter your title")
@@ -132,6 +132,7 @@ class AddingNewCellVC: UIViewController {
         
         reloadInputViews()
         pushEffect(sender)
+        
         navigationController?.popViewController(animated: true)
     }
     

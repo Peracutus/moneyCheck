@@ -7,10 +7,9 @@
 import UIKit
 import EasyPeasy
 import FSCalendar
+import RealmSwift
 
 class NewVC: UIViewController {
-    
-    var calendarHeight: NSLayoutConstraint!
     
     private var calendar: FSCalendar = {
         let calendar = FSCalendar()
@@ -26,6 +25,7 @@ class NewVC: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = true
         return button
     }()
+    
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.bounces = false
@@ -33,11 +33,20 @@ class NewVC: UIViewController {
         return tableView
     }()
     
+    let localRealm = try! Realm()
+    var taskArray: Results<TaskModel>!
     let idTaskCell = "idTaskCell"
+    var calendarHeight: NSLayoutConstraint!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
+        taskArray = localRealm.objects(TaskModel.self)
         
         calendar.delegate = self
         calendar.dataSource = self
@@ -51,6 +60,7 @@ class NewVC: UIViewController {
         setConstraints()
         swipeActions()
         navigationUI()
+        taskOnDate(date: calendar.today!)
     }
     
     @objc private func showButtonTapped() {
@@ -86,23 +96,56 @@ class NewVC: UIViewController {
             break
         }
     }
+    
+    private func taskOnDate(date: Date) {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.weekday], from: date)
+        guard let weekday = components.weekday else { return }
+        print(weekday)
+        
+        let dateStart = date
+        let dateEnd: Date = {
+            let components = DateComponents(day: 1, second:  -1)
+            return Calendar.current.date(byAdding: components, to: dateStart)!
+        }()
+        
+        let predicateRepeat = NSPredicate(format: "taskWeekday = \(weekday) AND taskDate BETWEEN %@", [dateStart, dateEnd])
+        
+        taskArray = localRealm.objects(TaskModel.self).filter(predicateRepeat)
+        tableView.reloadData()
+    }
+    
 }
 
 //MARK:- Delegate and DataSource
 extension NewVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return taskArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idTaskCell, for: indexPath) as! TasksVCCell
         cell.cellTaskDelegate = self
         cell.index = indexPath
+        let model = taskArray[indexPath.row]
+        cell.configure(model: model)
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let editingRow = taskArray[indexPath.row]
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, completionHandler in
+            RealmManager.shared.realmDeleteTask(editingRow)
+            tableView.reloadData()
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+        
     }
     
 }
@@ -114,7 +157,7 @@ extension NewVC: FSCalendarDataSource, FSCalendarDelegate {
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print(date)
+        taskOnDate(date: date)
     }
 }
 
@@ -138,6 +181,7 @@ extension NewVC {
         navigationItem.title = "Additing item"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus")!, style: .plain, target: self, action: #selector(plusButton))
     }
+    
     @objc private func plusButton() {
         let taskManagerAdditingView = TaskOptionsVC()
         navigationController?.pushViewController(taskManagerAdditingView, animated: true)
@@ -146,6 +190,8 @@ extension NewVC {
 
 extension  NewVC:PressReadyTaskButtonProtocol {
     func readyButtonTapped(indexPath: IndexPath) {
-        print("tap")
+        let task = taskArray[indexPath.row]
+        RealmManager.shared.updateReadyButton(task: task, bool: !task.taskReady)
+        tableView.reloadData()
     }
 }

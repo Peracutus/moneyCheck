@@ -15,10 +15,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = MainTabBarController()
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        
+        window?.rootViewController = IntroductionView(collectionViewLayout: layout)
         //window?.rootViewController = AdditingNewCellVC()
         window?.makeKeyAndVisible()
-        window?.overrideUserInterfaceStyle = .light
+        //window?.overrideUserInterfaceStyle = .light
     }
 
 }

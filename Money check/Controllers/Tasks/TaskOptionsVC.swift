@@ -37,12 +37,18 @@ class TaskOptionsVC: UITableViewController {
     }
     
     @objc private func saveAction() {
+        if taskModel.taskDate == nil || taskModel.taskName == "" {
+            alertSave(title: "Error", message: "Requered fields: Date and Name")
+        } else {
+        
         taskModel.taskColor = hexColorCell
+        
         RealmManager.shared.saveTaskModel(model: taskModel)
         taskModel = TaskModel()
-        alertSave(title: "Success ")
-        tableView.reloadRows(at: [[0,0],[1,0],[2,0],[3,0]], with: .none)
-        
+            alertSave(title: "Success ", message: nil)
+        //  tableView.reloadRows(at: [[0,0],[1,0],[2,0],[3,0]], with: .none)
+            tableView.reloadData()
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

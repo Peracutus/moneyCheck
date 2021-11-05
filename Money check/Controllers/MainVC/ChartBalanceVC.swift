@@ -88,7 +88,7 @@ class ChartBalanceVC: UIViewController {
         chartView.drawHoleEnabled = true
         chartView.holeRadiusPercent = 0.2
         chartView.transparentCircleRadiusPercent = 0.382
-        chartView.transparentCircleColor = .blueColor()
+        chartView.transparentCircleColor = .blueColor
         chartView.drawCenterTextEnabled = true
         chartView.centerText = "Balane"
         
@@ -101,7 +101,7 @@ class ChartBalanceVC: UIViewController {
         
         // Set segments
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
-        pieChartDataSet.colors = [.greenColor()!, .redColor()!]
+        pieChartDataSet.colors = [.greenColor, .redColor]
         
         // Set chart format
         let pieChartData = PieChartData(dataSet: pieChartDataSet)

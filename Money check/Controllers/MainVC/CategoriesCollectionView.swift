@@ -36,7 +36,7 @@ class CategoriesCollectionView: UIViewController {
     let addButton: UIButton = {
         let addLabel = UIButton()
         addLabel.imageView?.image = #imageLiteral(resourceName: "plus_icon")
-        addLabel.backgroundColor = .orangeColor()
+        addLabel.backgroundColor = .orangeColor
         addLabel.setBackgroundImage(#imageLiteral(resourceName: "plus_icon"), for: .normal)
         addLabel.layer.cornerRadius = 40
         addLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -106,7 +106,7 @@ extension CategoriesCollectionView: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let selectedItem = collectionView.cellForItem(at: indexPath) else {return}
         collectionView.cellForItem(at: indexPath)
-        selectedItem.contentView.backgroundColor = .orangeColor()
+        selectedItem.contentView.backgroundColor = .orangeColor
         
         let selectedCategory = categoryArray[indexPath.item].catName
         let selectedImage = categoryArray[indexPath.item].image

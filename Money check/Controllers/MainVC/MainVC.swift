@@ -10,14 +10,6 @@ import EasyPeasy
 import RealmSwift
 import Lottie
 
-struct UserCell {
-    var image: String
-    var title: String
-    var category: String
-    var value: String
-    var date: Date
-}
-
 class MainVC: UITableViewController {
     
     var cellItem: Results<CellItems>!
@@ -29,6 +21,7 @@ class MainVC: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         constans.calculatingValue()
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -37,9 +30,7 @@ class MainVC: UITableViewController {
         navigationUI()
         setupTableUI()
         dateForHeaders()
-        if RealmManager.shared.realm.objects(CellItems.self).isEmpty {
-            view.addSubview(animateEmptyData())
-        }
+        
     }
     
     private func navigationUI() {
@@ -49,6 +40,7 @@ class MainVC: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus")!, style: .plain, target: self, action: #selector(plusPushButton))
         
     }
+
     
     private func setupTableUI() {
         view.backgroundColor = UIColor(named: "bgColor")
@@ -57,6 +49,7 @@ class MainVC: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        view.addSubview(animateEmptyData()) //add animated view
     }
     
     @objc private func settingsMenu() {

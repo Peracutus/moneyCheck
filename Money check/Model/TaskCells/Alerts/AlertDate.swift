@@ -16,11 +16,11 @@ extension UIViewController {
         let datePicker = UIDatePicker(date: .date)
         datePicker.preferredDatePickerStyle  = .wheels
         datePicker.layer.borderWidth = 0
-        
+        let constants = Constants()
         alert.view.addSubview(datePicker)
         
         let ok = UIAlertAction(title: "OK", style: .default) {(action) in
-            let dateString = self.dateFormatter(path: datePicker.date, format: "dd.MM.yyyy")
+            let dateString = constants.dateFormatter(path: datePicker.date, format: "dd.MM.yyyy")
             
             let calendar = Calendar.current
             let component = calendar.dateComponents([.weekday], from: datePicker.date)

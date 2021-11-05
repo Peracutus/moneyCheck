@@ -13,7 +13,7 @@ import RealmSwift
 extension MainVC {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    
+        
         let view = UIView()
         let label = UILabel(text: dateFormatter(path: itemDates[section], format: "dd MMMM"), font: .avenirNextDemiBold20(), alignment: .center)
         
@@ -22,13 +22,13 @@ extension MainVC {
         
         if section == 0 {
             let balanceStack = UIStackView(arrangedSubviews: [
-                constans.viewWithbutton(color: .greenColor()!,name: "+ \(constans.separatedNumber(constans.income)) ₽",selector: #selector(butForCharts)), constans.viewWithbutton(color: .redColor()!, name: "- \(constans.separatedNumber(constans.expense)) ₽",selector: #selector(butForCharts))
+                constans.viewWithbutton(color: .greenColor,name: "+ \(constans.separatedNumber(constans.income)) ₽",selector: #selector(butForCharts)), constans.viewWithbutton(color: .redColor, name: "- \(constans.separatedNumber(constans.expense)) ₽",selector: #selector(butForCharts))
             ],
-            axis: .horizontal,
-            spacing: -5,
-            distribution: .fillEqually)
+                                           axis: .horizontal,
+                                           spacing: -5,
+                                           distribution: .fillEqually)
             //
-            let incomeAndExpenseStack = UIStackView(arrangedSubviews: [constans.viewWithbutton(color: .blueColor()!, name: "Balance: \(constans.separatedNumber(constans.balance)) ₽", selector: #selector(butForCharts)), balanceStack, label], axis: .vertical, spacing: -5, distribution: .fillProportionally)
+            let incomeAndExpenseStack = UIStackView(arrangedSubviews: [constans.viewWithbutton(color: .blueColor, name: "Balance: \(constans.separatedNumber(constans.balance)) ₽", selector: #selector(butForCharts)), balanceStack, label], axis: .vertical, spacing: -5, distribution: .fillProportionally)
             view.addSubview(incomeAndExpenseStack)
             return RealmManager.shared.realm.objects(CellItems.self).count == 0 ? nil : view
         }
@@ -47,8 +47,7 @@ extension MainVC {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CheckListCell", for: indexPath) as! CustomCell
-       configureCell(cell, at: indexPath)
-    
+        configureCell(cell, at: indexPath)
         return cell
     }
     
@@ -61,11 +60,7 @@ extension MainVC {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if groupedItems[itemDates[section]]!.count == 0 {
-            return 1
-        } else {
-        return groupedItems[itemDates[section]]!.count
-    }
+            return groupedItems[itemDates[section]]!.count
     }
     
     //MARK:- Set left swipe action for cells
@@ -80,7 +75,7 @@ extension MainVC {
             
         }
         deleteAction.image = UIImage(systemName: "trash")
-        deleteAction.backgroundColor = .redColor()
+        deleteAction.backgroundColor = .redColor
         
         let editAction = UIContextualAction(style: .destructive, title: "Edit") { (_, _, completionHandler) in
             
@@ -90,26 +85,26 @@ extension MainVC {
             
         }
         editAction.image = UIImage(systemName: "square.and.pencil")
-        editAction.backgroundColor = .blueColor()
+        editAction.backgroundColor = .blueColor
         
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
         return configuration
     }
     
     func configureCell(_ cell: CustomCell, at indexPath: IndexPath) {
-        
+        //  sorting data by date
         let itemsForDate = groupedItems[itemDates[indexPath.section]]!
         let sortedItem = Array(itemsForDate.sorted(byKeyPath: "date"))[indexPath.row]
-        
         cell.titleLabel.text = sortedItem.titleLabel
         cell.dateLabel.text = dateFormatter(path: sortedItem.date!, format: "dd MMM HH:mm")
         cell.categoryLabel.text =  sortedItem.category
         cell.amountLabel.text = (sortedItem.type == 0 ? "+ " : "- ") + String(constans.separatedNumber(sortedItem.value)) + " ₽"
-        cell.amountLabel.textColor = (sortedItem.type) == 0 ? .greenColor() : .redColor()
-        
-        guard let image = sortedItem.categoryImage else {return}
+        cell.amountLabel.textColor = (sortedItem.type) == 0 ? .greenColor : .redColor
+        guard let image = sortedItem.categoryImage else { return }
         cell.categoryImageView.image = UIImage(named: image)
-    
+        
+        
+        
     }
     
     //MARK:- buttons

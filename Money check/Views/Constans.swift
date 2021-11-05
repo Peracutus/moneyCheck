@@ -52,6 +52,7 @@ struct Constants {
         formatter.decimalSeparator = ","
         return formatter.string(from: itIsANumber)!
     }
+    
     //MARK:- Adding new items view
     
     func label(text: String) -> UILabel {
@@ -77,5 +78,18 @@ struct Constants {
         return sc
     }()
     
+    func dateFormatter(path: Date, format: String) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .full
+        dateFormatter.dateFormat = format
+        let pickerDateString = dateFormatter.string(from: path)
+        let dateString = " \(pickerDateString)"
+        
+        // make sure the following are the same as that used in the API
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        dateFormatter.locale = Locale.current
+        
+        return dateString
+    }
 }
 

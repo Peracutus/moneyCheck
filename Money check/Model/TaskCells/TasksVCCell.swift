@@ -14,7 +14,6 @@ class TasksVCCell: UITableViewCell {
     let readyButton: UIButton = {
        let addLabel = UIButton()
         addLabel.tintColor = .black
-        //addLabel.backgroundColor = .blueColor()
         addLabel.setBackgroundImage(UIImage(systemName: "swift"), for: .normal)
         addLabel.layer.cornerRadius = 20
         return addLabel
@@ -35,6 +34,18 @@ class TasksVCCell: UITableViewCell {
         setConstraints()
         
         readyButton.addTarget(self, action: #selector(readyButTapped), for: .touchUpInside)
+    }
+    
+    func configure(model: TaskModel) {
+        titleLabel.text = model.taskName
+        taskLabel.text = model.taskDescription
+        backgroundColor = UIColor().colorFromHex("\(model.taskColor)")
+        
+        if model.taskReady {
+            readyButton.setBackgroundImage(UIImage(systemName: "chevron.down.circle.fill"), for: .normal)
+        } else {
+            readyButton.setBackgroundImage(UIImage(systemName: "chevron.down.circle"), for: .normal)
+        }
     }
     
     @objc private func readyButTapped() {
