@@ -114,6 +114,7 @@ class ChartBalanceVC: UIViewController {
         chartView.data = pieChartData
     }
 }
+
 //MARK:- Delegate and DataSource
 
 extension ChartBalanceVC: FSCalendarDataSource, FSCalendarDelegate {

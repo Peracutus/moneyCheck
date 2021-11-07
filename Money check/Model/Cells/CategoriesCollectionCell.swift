@@ -25,6 +25,7 @@ class CategoriesCollectionCell: UICollectionViewCell {
         imageView.image = #imageLiteral(resourceName: "Hearts")
         return imageView
     }()
+    
      let nameLabel = UILabel(text: "Transport and transport", font: .avenirNextDemiBold20(), alignment: .center)
     
     override init(frame: CGRect) {

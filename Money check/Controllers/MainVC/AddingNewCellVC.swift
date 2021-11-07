@@ -15,12 +15,15 @@ class AddingNewCellVC: UIViewController {
     private let realm = try! Realm()
     private let confirmBtn = UIButton(color: .orangeColor, name: "Save")
     private var constants = Constants()
+    let cellModel = CellItems()
     
     let textInputTitle = UITextField(placeholder: "Enter your title")
     let textInputAmount = UITextField(placeholder: "Enter your value")
     let textWithPicker = UITextField(placeholder: "Enter smthng")
     
-    private let imageView: UIImageView = {
+    private let main = MainVC()
+    
+    var imageView: UIImageView = {
         let image = UIImageView()
         image.image = #imageLiteral(resourceName: "plus_icon").withTintColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
         image.layer.borderWidth = 2
@@ -45,7 +48,7 @@ class AddingNewCellVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "New record"
+        navigationItem.title = main.editModel ? "Add new record" : "Edit the record"
         setupUI()
         confirmBtn.addTarget(self, action: #selector(saveHandle(_:)) , for: .touchUpInside)
         registerKeyboardNotification()
@@ -118,23 +121,27 @@ class AddingNewCellVC: UIViewController {
             showError(title: "Uncorrect value", message: "Enter valid number")
             return
         }
+//        print(imageView.image?.accessibilityHint)
+        //guard let imageText = imageView.image?.accessibilityIdentifier else {return imageText = "Beer"}
         
-        let cellInfo = CellItems()
-        cellInfo.titleLabel = titleTextField
-        cellInfo.value = Float(amountTextField)!
-        cellInfo.date = constants.dateView.date
-        cellInfo.type = Int32(constants.typePick.selectedSegmentIndex)
-        cellInfo.category = textWithPicker.text
-        let imageView = imageView.image?.accessibilityIdentifier
-        cellInfo.categoryImage = imageView
-        
+        let cellInfo = CellItems(titleLabel: titleTextField,
+                                 category: textWithPicker.text!,
+                                 categoryImage: "Beer",
+                                 date: constants.dateView.date,
+                                 value: Float(amountTextField)!,
+                                 type: Int32(constants.typePick.selectedSegmentIndex))
         RealmManager.shared.saveCellModel(model: cellInfo)
         
         reloadInputViews()
         pushEffect(sender)
-        
         navigationController?.popViewController(animated: true)
     }
+    
+    @objc private func editingModel(cellModel: CellItems) {
+        
+        navigationController?.pushViewController(main, animated: true)
+    }
+    
     
     private func showError(title:String, message:String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

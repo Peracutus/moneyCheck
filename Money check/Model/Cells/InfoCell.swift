@@ -66,7 +66,9 @@ class InfoCell: UICollectionViewCell {
         addSubview(labelDescription)
         bgView.addSubview(animationView)
         bgView.easy.layout(Top(10).to(safeAreaLayoutGuide, .top), Left(), Right())
+        
         bgView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5).isActive = true
+        
         animationView.easy.layout(CenterX(), CenterY(), Height().like(bgView, .height))
         label.easy.layout(Top().to(bgView, .bottom), Left(20), Right(20))
         labelDescription.easy.layout(Top(20).to(label, .bottom), Left(20), Right(20))

@@ -12,6 +12,18 @@ import RealmSwift
 
 extension MainVC {
     
+    //MARK: - Appearing footer if realm objects = 0
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return animateEmptyData()
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return RealmManager.shared.realm.objects(CellItems.self).isEmpty ? 500 : 0
+    }
+    
+    //MARK: -  if realm object >= 1
+    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let view = UIView()
@@ -60,14 +72,14 @@ extension MainVC {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return groupedItems[itemDates[section]]!.count
+        return groupedItems[itemDates[section]]!.count
     }
     
-    //MARK:- Set left swipe action for cells
+    //MARK: - Set left swipe action for cells
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
     -> UISwipeActionsConfiguration? {
         let itemsForDate = groupedItems[itemDates[indexPath.section]]!
-        let sortedItem = Array(itemsForDate.sorted(byKeyPath: "date"))[indexPath.row]
+        let sortedItem = Array(itemsForDate)[indexPath.row]
         
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
             RealmManager.shared.realmDeleteValue( sortedItem)
@@ -80,6 +92,8 @@ extension MainVC {
         let editAction = UIContextualAction(style: .destructive, title: "Edit") { (_, _, completionHandler) in
             
             let editCellInfo = AddingNewCellVC()
+            //editCellInfo.cellModel = 
+            
             let navController = UINavigationController(rootViewController: editCellInfo)
             self.present(navController, animated: true, completion: nil)
             
@@ -92,9 +106,11 @@ extension MainVC {
     }
     
     func configureCell(_ cell: CustomCell, at indexPath: IndexPath) {
+        
         //  sorting data by date
         let itemsForDate = groupedItems[itemDates[indexPath.section]]!
-        let sortedItem = Array(itemsForDate.sorted(byKeyPath: "date"))[indexPath.row]
+        let sortedItem = Array(itemsForDate)[indexPath.row]
+        
         cell.titleLabel.text = sortedItem.titleLabel
         cell.dateLabel.text = dateFormatter(path: sortedItem.date!, format: "dd MMM HH:mm")
         cell.categoryLabel.text =  sortedItem.category
@@ -102,8 +118,6 @@ extension MainVC {
         cell.amountLabel.textColor = (sortedItem.type) == 0 ? .greenColor : .redColor
         guard let image = sortedItem.categoryImage else { return }
         cell.categoryImageView.image = UIImage(named: image)
-        
-        
         
     }
     
