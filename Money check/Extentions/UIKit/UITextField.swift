@@ -7,6 +7,7 @@
 
 import UIKit
 import EasyPeasy
+
 extension UITextField {
     convenience init(placeholder: String) {
         self.init()
@@ -21,4 +22,3 @@ extension UITextField {
         self.easy.layout(Height(40),Width(220))
     }
 }
-

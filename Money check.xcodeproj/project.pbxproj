@@ -33,7 +33,6 @@
 		B54ECCF426BAE88200A7640C /* empty-face.json in Resources */ = {isa = PBXBuildFile; fileRef = B54ECCF326BAE88200A7640C /* empty-face.json */; };
 		B54ECCF826BC551600A7640C /* MainVCTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54ECCF726BC551600A7640C /* MainVCTableView.swift */; };
 		B56C70D1272DA2C400D595BC /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C70D0272DA2C400D595BC /* RealmManager.swift */; };
-		B56C70D5272DC6D300D595BC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B56C70D4272DC6D300D595BC /* .gitignore */; };
 		B56C70D7272DD66100D595BC /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C70D6272DD66100D595BC /* TaskModel.swift */; };
 		B56C70D9272DE0D700D595BC /*  AlertSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C70D8272DE0D700D595BC /*  AlertSave.swift */; };
 		B5905AB326B67C340055617F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5905AB226B67C340055617F /* AppDelegate.swift */; };
@@ -91,7 +90,6 @@
 		B54ECCF326BAE88200A7640C /* empty-face.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "empty-face.json"; sourceTree = "<group>"; };
 		B54ECCF726BC551600A7640C /* MainVCTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCTableView.swift; sourceTree = "<group>"; };
 		B56C70D0272DA2C400D595BC /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
-		B56C70D4272DC6D300D595BC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B56C70D6272DD66100D595BC /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		B56C70D8272DE0D700D595BC /*  AlertSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " AlertSave.swift"; sourceTree = "<group>"; };
 		B5905AAF26B67C340055617F /* Money check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,7 +216,6 @@
 			isa = PBXGroup;
 			children = (
 				B56C70CF272DA1CC00D595BC /* Realm */,
-				B5E5456A2708A9DB00C36C7B /* Header */,
 				B5E545672708872800C36C7B /* TaskCells */,
 				B50786D62700FFCB00F9FD30 /* Cells */,
 				B50786E0270324AD00F9FD30 /* MenuModel.swift */,
@@ -276,7 +273,6 @@
 		B5905AA626B67C340055617F = {
 			isa = PBXGroup;
 			children = (
-				B56C70D4272DC6D300D595BC /* .gitignore */,
 				B5905AB126B67C340055617F /* Money check */,
 				B5905AB026B67C340055617F /* Products */,
 				82C78C3631E6772E95A95D20 /* Pods */,
@@ -311,6 +307,7 @@
 		B5905AC926B67CB50055617F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B5E5456A2708A9DB00C36C7B /* Header */,
 				B5905ACC26B67D510055617F /* Constans.swift */,
 				B50786E62703936700F9FD30 /* CustomView.swift */,
 			);
@@ -320,7 +317,7 @@
 		B5905ADA26B86FEB0055617F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B5E545622708811400C36C7B /* Tasks */,
+				B5E545622708811400C36C7B /* TaskVC */,
 				B50786EA27039C7900F9FD30 /* MainVC */,
 				B538CDA826FCF7A50010264D /* MainTabBarController.swift */,
 				B5C79B3127342F78007D649E /* IntroductionView.swift */,
@@ -329,14 +326,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		B5E545622708811400C36C7B /* Tasks */ = {
+		B5E545622708811400C36C7B /* TaskVC */ = {
 			isa = PBXGroup;
 			children = (
 				B538CDB326FE05E40010264D /* TaskManagerVC.swift */,
 				B5E545632708818D00C36C7B /* TaskOptionsVC.swift */,
 				B5E5456D270DAB9000C36C7B /* ColorVC.swift */,
 			);
-			path = Tasks;
+			path = TaskVC;
 			sourceTree = "<group>";
 		};
 		B5E545672708872800C36C7B /* TaskCells */ = {
@@ -429,7 +426,6 @@
 			files = (
 				B5C79B2C27342E76007D649E /* basket.json in Resources */,
 				B5C79B2F27342F45007D649E /* case.json in Resources */,
-				B56C70D5272DC6D300D595BC /* .gitignore in Resources */,
 				B5C79B3027342F45007D649E /* graphic.json in Resources */,
 				B5905AC226B67C370055617F /* LaunchScreen.storyboard in Resources */,
 				B5905ABF26B67C370055617F /* Assets.xcassets in Resources */,

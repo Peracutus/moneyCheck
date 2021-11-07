@@ -13,9 +13,11 @@ import RealmSwift
 extension MainVC {
     
     func dateForHeaders() {
-        cellItem = realm.objects(CellItems.self)
         
-        itemDates = cellItem.reduce(into: [Date](), { results, currentItem in
+        cellItem = realm.objects(CellItems.self).sorted(byKeyPath: "date")
+        
+        
+        itemDates = cellItem!.reduce(into: [Date](), { results, currentItem in
             let date = currentItem.date!
             
             let beginningOfDay = Calendar.current.date(from: DateComponents(year: Calendar.current.component(.year, from: date), month: Calendar.current.component(.month, from: date), day: Calendar.current.component(.day, from: date), hour: 0, minute: 0, second: 0))!
@@ -36,8 +38,10 @@ extension MainVC {
             
             let endOfDay = Calendar.current.date(from: DateComponents(year: Calendar.current.component(.year, from: date), month: Calendar.current.component(.month, from: date), day: Calendar.current.component(.day, from: date), hour: 23, minute: 59, second: 59))!
             
+            
             results[beginningOfDay] = realm.objects(CellItems.self).filter("date >= %@ AND date <= %@", beginningOfDay, endOfDay)
         })
+        tableView.reloadData()
     }
 }
 

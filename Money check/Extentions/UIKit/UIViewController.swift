@@ -112,12 +112,7 @@ extension UIViewController {
         label.easy.layout(CenterX(), Top(20))
         bottomLabel.easy.layout(Bottom().to(viewBG), CenterX(), Width().like(viewBG, .width))
         viewBG.easy.layout(Height(400), Width(400), CenterY(0), CenterX(0))
-        
-        if RealmManager.shared.realm.objects(CellItems.self).isEmpty {
-            viewBG.isHidden = false
-        } else {
-            viewBG.isHidden = true
-        }
+    
         return viewBG
     }
     

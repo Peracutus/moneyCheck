@@ -14,23 +14,27 @@ class MainVC: UITableViewController {
     
     var cellItem: Results<CellItems>!
     var constans = Constants()
+    
     var groupedItems = [Date: Results<CellItems>]()
     var itemDates = [Date]()
     let realm = try! Realm()
     
+    let cellModel = CellItems()
+    var editModel = false
     
     override func viewWillAppear(_ animated: Bool) {
         constans.calculatingValue()
         tableView.reloadData()
+        dateForHeaders()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         navigationUI()
         setupTableUI()
-        dateForHeaders()
-        
+        //dateForHeaders()
     }
     
     private func navigationUI() {
@@ -41,7 +45,6 @@ class MainVC: UITableViewController {
         
     }
 
-    
     private func setupTableUI() {
         view.backgroundColor = UIColor(named: "bgColor")
         tableView.bounces = false
@@ -49,7 +52,6 @@ class MainVC: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        view.addSubview(animateEmptyData()) //add animated view
     }
     
     @objc private func settingsMenu() {
@@ -61,4 +63,3 @@ class MainVC: UITableViewController {
         navigationController?.pushViewController(secondVC, animated: true)
     }
 }
-
