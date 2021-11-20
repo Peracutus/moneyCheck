@@ -80,27 +80,36 @@ extension MainVC {
     -> UISwipeActionsConfiguration? {
         let itemsForDate = groupedItems[itemDates[indexPath.section]]!
         let sortedItem = Array(itemsForDate)[indexPath.row]
-        
+
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
             RealmManager.shared.realmDeleteValue( sortedItem)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            
+
         }
         deleteAction.image = UIImage(systemName: "trash")
         deleteAction.backgroundColor = .redColor
-        
-        let editAction = UIContextualAction(style: .destructive, title: "Edit") { (_, _, completionHandler) in
-            
+
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { (_, _, completionHandler) in
+
             let editCellInfo = AddingNewCellVC()
-            //editCellInfo.cellModel = 
-            
+            let index = self.cellItem[indexPath.row]
+            editCellInfo.textInputTitle.text = index.titleLabel
+            editCellInfo.textInputAmount.text = String(index.value)
+            editCellInfo.imageView.image = UIImage(named: "Beer")
+            editCellInfo.textWithPicker.text = index.category
+            editCellInfo.constants.dateView.date = index.date!
+            editCellInfo.confirmBtn.setTitle("Edit", for: .normal)
+            editCellInfo.confirmBtn.backgroundColor = .blueColor
+            //editCellInfo.editStyle = true
             let navController = UINavigationController(rootViewController: editCellInfo)
+            editCellInfo.navigationItem.title = "Editing cell"
             self.present(navController, animated: true, completion: nil)
             
+
         }
         editAction.image = UIImage(systemName: "square.and.pencil")
         editAction.backgroundColor = .blueColor
-        
+
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
         return configuration
     }

@@ -13,9 +13,9 @@ import RealmSwift
 class AddingNewCellVC: UIViewController {
     
     private let realm = try! Realm()
-    private let confirmBtn = UIButton(color: .orangeColor, name: "Save")
-    private var constants = Constants()
-    let cellModel = CellItems()
+    let confirmBtn = UIButton(color: .orangeColor, name: "Save")
+    let constants = Constants()
+    var editStyle = false
     
     let textInputTitle = UITextField(placeholder: "Enter your title")
     let textInputAmount = UITextField(placeholder: "Enter your value")
@@ -48,7 +48,6 @@ class AddingNewCellVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = main.editModel ? "Add new record" : "Edit the record"
         setupUI()
         confirmBtn.addTarget(self, action: #selector(saveHandle(_:)) , for: .touchUpInside)
         registerKeyboardNotification()

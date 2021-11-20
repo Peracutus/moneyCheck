@@ -19,30 +19,22 @@ class MainVC: UITableViewController {
     var itemDates = [Date]()
     let realm = try! Realm()
     
-    let cellModel = CellItems()
-    var editModel = false
-    
     override func viewWillAppear(_ animated: Bool) {
         constans.calculatingValue()
         tableView.reloadData()
         dateForHeaders()
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         navigationUI()
         setupTableUI()
-        //dateForHeaders()
     }
     
     private func navigationUI() {
-        
         navigationItem.title = "Personal finance"
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "slider.horizontal.3")!, style: .plain, target: self, action: #selector(settingsMenu))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus")!, style: .plain, target: self, action: #selector(plusPushButton))
-        
     }
 
     private func setupTableUI() {
@@ -61,5 +53,6 @@ class MainVC: UITableViewController {
     @objc private func plusPushButton() {
         let secondVC = AddingNewCellVC()
         navigationController?.pushViewController(secondVC, animated: true)
+        secondVC.navigationItem.title = "Add a new value"
     }
 }

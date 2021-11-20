@@ -9,6 +9,7 @@ import UIKit
 
 //MARK: - Up and down view with using Keyboard
 extension AddingNewCellVC {
+    
      func registerKeyboardNotification() {
         
         NotificationCenter.default.addObserver(self,
