@@ -6,7 +6,7 @@ This is my first pet profect that allows controlling budget
 The main stack i'm focus on is here:
 MVC pattern //
 UIKit //
-programmatically only //
+programmatically only without using a storyboard//
 Realm database //
 CocoaPods //
 Animation //
