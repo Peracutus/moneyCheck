@@ -46,6 +46,7 @@
 		B5905AD226B6B4C80055617F /* AddingNewCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5905AD126B6B4C80055617F /* AddingNewCellVC.swift */; };
 		B5905AD726B826990055617F /* KeyboardAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5905AD626B826990055617F /* KeyboardAppearance.swift */; };
 		B5905AD926B86DEC0055617F /* RealmCellItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5905AD826B86DEC0055617F /* RealmCellItems.swift */; };
+		B59529A7275514F400434FC5 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59529A6275514F400434FC5 /* Date.swift */; };
 		B5C79B2C27342E76007D649E /* basket.json in Resources */ = {isa = PBXBuildFile; fileRef = B5C79B2B27342E76007D649E /* basket.json */; };
 		B5C79B2F27342F45007D649E /* case.json in Resources */ = {isa = PBXBuildFile; fileRef = B5C79B2D27342F45007D649E /* case.json */; };
 		B5C79B3027342F45007D649E /* graphic.json in Resources */ = {isa = PBXBuildFile; fileRef = B5C79B2E27342F45007D649E /* graphic.json */; };
@@ -105,6 +106,7 @@
 		B5905AD126B6B4C80055617F /* AddingNewCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewCellVC.swift; sourceTree = "<group>"; };
 		B5905AD626B826990055617F /* KeyboardAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAppearance.swift; sourceTree = "<group>"; };
 		B5905AD826B86DEC0055617F /* RealmCellItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCellItems.swift; sourceTree = "<group>"; };
+		B59529A6275514F400434FC5 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		B5C79B2B27342E76007D649E /* basket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = basket.json; sourceTree = "<group>"; };
 		B5C79B2D27342F45007D649E /* case.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = case.json; sourceTree = "<group>"; };
 		B5C79B2E27342F45007D649E /* graphic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = graphic.json; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				B5E545602707A41700C36C7B /* MainDateSorting.swift */,
 				B54ECCF726BC551600A7640C /* MainVCTableView.swift */,
 				B5905AD626B826990055617F /* KeyboardAppearance.swift */,
+				B59529A6275514F400434FC5 /* Date.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				B50786D127004D7800F9FD30 /* UIColor.swift in Sources */,
 				B5C79B3427343419007D649E /* InfoCell.swift in Sources */,
 				B5E545612707A41700C36C7B /* MainDateSorting.swift in Sources */,
+				B59529A7275514F400434FC5 /* Date.swift in Sources */,
 				B50786DD2702FCB000F9FD30 /* MenuTableCell.swift in Sources */,
 				B538CDB426FE05E40010264D /* TaskManagerVC.swift in Sources */,
 				B5905ABD26B67C350055617F /* Money_check.xcdatamodeld in Sources */,

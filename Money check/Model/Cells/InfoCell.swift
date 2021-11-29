@@ -60,7 +60,6 @@ class InfoCell: UICollectionViewCell {
     
     private func setupUI() {
 
-        
         addSubview(bgView)
         addSubview(label)
         addSubview(labelDescription)

@@ -9,7 +9,7 @@ import EasyPeasy
 import FSCalendar
 import RealmSwift
 
-class NewVC: UIViewController {
+class TaskManagerVC: UIViewController {
     
     private var calendar: FSCalendar = {
         let calendar = FSCalendar()
@@ -118,7 +118,7 @@ class NewVC: UIViewController {
 }
 
 //MARK:- Delegate and DataSource
-extension NewVC: UITableViewDelegate, UITableViewDataSource {
+extension TaskManagerVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskArray.count
@@ -150,7 +150,7 @@ extension NewVC: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension NewVC: FSCalendarDataSource, FSCalendarDelegate {
+extension TaskManagerVC: FSCalendarDataSource, FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
         calendarHeight.constant = bounds.height
         view.layoutIfNeeded()
@@ -163,7 +163,7 @@ extension NewVC: FSCalendarDataSource, FSCalendarDelegate {
 
 //MARK:- setConstraints
 
-extension NewVC {
+extension TaskManagerVC {
     
     func setConstraints() {
         
@@ -188,7 +188,7 @@ extension NewVC {
     }
 }
 
-extension  NewVC:PressReadyTaskButtonProtocol {
+extension  TaskManagerVC:PressReadyTaskButtonProtocol {
     func readyButtonTapped(indexPath: IndexPath) {
         let task = taskArray[indexPath.row]
         RealmManager.shared.updateReadyButton(task: task, bool: !task.taskReady)

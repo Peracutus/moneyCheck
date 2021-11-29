@@ -13,9 +13,9 @@ import RealmSwift
 class AddingNewCellVC: UIViewController {
     
     private let realm = try! Realm()
-    private let confirmBtn = UIButton(color: .orangeColor, name: "Save")
-    private var constants = Constants()
-    let cellModel = CellItems()
+    let confirmBtn = UIButton(color: .orangeColor, name: "Save")
+    let constants = Constants()
+    let editStyle = false
     
     let textInputTitle = UITextField(placeholder: "Enter your title")
     let textInputAmount = UITextField(placeholder: "Enter your value")
@@ -48,7 +48,6 @@ class AddingNewCellVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = main.editModel ? "Add new record" : "Edit the record"
         setupUI()
         confirmBtn.addTarget(self, action: #selector(saveHandle(_:)) , for: .touchUpInside)
         registerKeyboardNotification()
@@ -121,12 +120,13 @@ class AddingNewCellVC: UIViewController {
             showError(title: "Uncorrect value", message: "Enter valid number")
             return
         }
+        
 //        print(imageView.image?.accessibilityHint)
-        //guard let imageText = imageView.image?.accessibilityIdentifier else {return imageText = "Beer"}
+        guard let imageText = imageView.image?.accessibilityIdentifier else {return }
         
         let cellInfo = CellItems(titleLabel: titleTextField,
                                  category: textWithPicker.text!,
-                                 categoryImage: "Beer",
+                                 categoryImage: imageText,
                                  date: constants.dateView.date,
                                  value: Float(amountTextField)!,
                                  type: Int32(constants.typePick.selectedSegmentIndex))
