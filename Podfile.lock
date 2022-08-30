@@ -1,0 +1,40 @@
+PODS:
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
+  - EasyPeasy (1.10.0)
+  - FSCalendar (2.8.2)
+  - lottie-ios (3.2.3)
+  - Realm (10.16.0):
+    - Realm/Headers (= 10.16.0)
+  - Realm/Headers (10.16.0)
+  - RealmSwift (10.16.0):
+    - Realm (= 10.16.0)
+
+DEPENDENCIES:
+  - Charts
+  - EasyPeasy
+  - FSCalendar
+  - lottie-ios
+  - RealmSwift
+
+SPEC REPOS:
+  trunk:
+    - Charts
+    - EasyPeasy
+    - FSCalendar
+    - lottie-ios
+    - Realm
+    - RealmSwift
+
+SPEC CHECKSUMS:
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
+  EasyPeasy: b9b1bae024d21a7dfa9bad26d6826d88348cc6f1
+  FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
+  Realm: b6027801398f3743fc222f096faa85281b506e6c
+  RealmSwift: b02a3d0e4947955da960b642c98ad3a461fc4e70
+
+PODFILE CHECKSUM: bcc43b8070812cc26181c1591cdd97cf75209c72
+
+COCOAPODS: 1.10.2
