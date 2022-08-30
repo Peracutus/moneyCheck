@@ -68,7 +68,6 @@ extension CategoriesCollectionView: UICollectionViewDelegate, UICollectionViewDa
     
     func createCollectionView() {
         let flowLayout = UICollectionViewFlowLayout()
-        
         let frame = 100
         flowLayout.itemSize = CGSize.init(width: frame, height: frame)
         flowLayout.scrollDirection = .vertical

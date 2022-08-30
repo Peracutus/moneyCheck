@@ -95,7 +95,7 @@ extension PopUpVC: UICollectionViewDelegate, UICollectionViewDataSource {
         
         collectionView = UICollectionView(frame: .infinite, collectionViewLayout: flowLayout)
         guard let collectionView = collectionView else {return}
-        self.collectionView!.register(cellForCreateCat.self, forCellWithReuseIdentifier: cellForCreateCat.identifier)
+        collectionView.register(cellForCreateCat.self, forCellWithReuseIdentifier: cellForCreateCat.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = #colorLiteral(red: 0.9888455243, green: 1, blue: 0.9262188061, alpha: 1)

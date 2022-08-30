@@ -39,7 +39,7 @@ extension MainVC {
                                            axis: .horizontal,
                                            spacing: -5,
                                            distribution: .fillEqually)
-            //
+            
             let incomeAndExpenseStack = UIStackView(arrangedSubviews: [constans.viewWithbutton(color: .blueColor, name: "Balance: \(constans.separatedNumber(constans.balance)) ₽", selector: #selector(butForCharts)), balanceStack, label], axis: .vertical, spacing: -5, distribution: .fillProportionally)
             view.addSubview(incomeAndExpenseStack)
             return RealmManager.shared.realm.objects(CellItems.self).count == 0 ? nil : view
@@ -58,7 +58,7 @@ extension MainVC {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CheckListCell", for: indexPath) as! CustomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CheckListCell", for: indexPath) as! MainBudgetCell
         configureCell(cell, at: indexPath)
         return cell
     }
@@ -104,8 +104,6 @@ extension MainVC {
             let navController = UINavigationController(rootViewController: editCellInfo)
             editCellInfo.navigationItem.title = "Editing cell"
             self.present(navController, animated: true, completion: nil)
-            
-
         }
         editAction.image = UIImage(systemName: "square.and.pencil")
         editAction.backgroundColor = .blueColor
@@ -114,7 +112,7 @@ extension MainVC {
         return configuration
     }
     
-    func configureCell(_ cell: CustomCell, at indexPath: IndexPath) {
+    func configureCell(_ cell: MainBudgetCell, at indexPath: IndexPath) {
         
         //  sorting data by date
         let itemsForDate = groupedItems[itemDates[indexPath.section]]!
@@ -126,8 +124,7 @@ extension MainVC {
         cell.amountLabel.text = (sortedItem.type == 0 ? "+ " : "- ") + String(constans.separatedNumber(sortedItem.value)) + " ₽"
         cell.amountLabel.textColor = (sortedItem.type) == 0 ? .greenColor : .redColor
         guard let image = sortedItem.categoryImage else { return }
-        cell.categoryImageView.image = UIImage(named: image)
-        
+        cell.categoryImageView.image = UIImage(named: image.description)
     }
     
     //MARK:- buttons
@@ -136,5 +133,4 @@ extension MainVC {
         let chartBalance = ChartBalanceVC()
         navigationController?.pushViewController( chartBalance, animated: true)
     }
-    
 }

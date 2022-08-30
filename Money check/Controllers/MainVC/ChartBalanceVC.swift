@@ -9,9 +9,12 @@ import UIKit
 import Charts
 import EasyPeasy
 import FSCalendar
+import RealmSwift
 
 class ChartBalanceVC: UIViewController {
     
+    private var chartDate : Results<CellItems>!
+    private let localRealm = try! Realm()
     private var constans = Constants()
     private var calendarHeight: NSLayoutConstraint!
     private let incomeValue = UILabel(text: "Income", font: .avenirNext20(), alignment: .center)
@@ -90,7 +93,7 @@ class ChartBalanceVC: UIViewController {
         chartView.transparentCircleRadiusPercent = 0.382
         chartView.transparentCircleColor = .blueColor
         chartView.drawCenterTextEnabled = true
-        chartView.centerText = "Balane"
+        chartView.centerText = "Balance"
         
         // Установка массива входных значений
         var dataEntries: [ChartDataEntry] = []
@@ -107,11 +110,13 @@ class ChartBalanceVC: UIViewController {
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
         let format = NumberFormatter()
         format.numberStyle = .currency
+        format.currencyCode = "RUR"
         let formatter = DefaultValueFormatter(formatter: format)
         pieChartData.setValueFormatter(formatter)
         
         // set path data
         chartView.data = pieChartData
+        ///нет отображения значений по нужной дате, настроено только под общий баланс за все время
     }
 }
 
@@ -129,6 +134,18 @@ extension ChartBalanceVC: FSCalendarDataSource, FSCalendarDelegate {
         let components = calendar.dateComponents([.weekday], from: date)
         guard let weekday = components.weekday else {return}
         print(weekday)
+        let dateStart = date
+        let dateEnd: Date = {
+            let components = DateComponents(day: 1, second:  -1)
+            return Calendar.current.date(byAdding: components, to: dateStart)!
+        }()
+        
+        let predicateRepeat = NSPredicate(format: "weekday = \(weekday) AND date BETWEEN %@", [dateStart, dateEnd])
+        
+        chartDate = localRealm.objects(CellItems.self).filter(predicateRepeat)
+        chartDate.forEach { number in
+            print(number)
+        }
     }
 }
 

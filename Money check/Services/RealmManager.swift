@@ -21,27 +21,9 @@ class RealmManager {
         }
     }
     
-    func saveTaskModel(model: TaskModel) {
-        try! realm.write{
-            realm.add(model)
-        }
-    }
-    
     func realmDeleteValue(_ value: CellItems){
         try! realm.write{
             realm.delete(value)
-        }
-    }
-    
-    func realmDeleteTask(_ value: TaskModel){
-        try! realm.write{
-            realm.delete(value)
-        }
-    }
-    
-    func updateReadyButton(task: TaskModel, bool: Bool) {
-        try! realm.write {
-            task.taskReady = bool
         }
     }
 }

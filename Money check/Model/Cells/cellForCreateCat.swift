@@ -8,7 +8,7 @@
 import UIKit
 import EasyPeasy
 
-class cellForCreateCat: UICollectionViewCell {
+final class cellForCreateCat: UICollectionViewCell {
     
     static let identifier = "CellForCreateCat"
     
@@ -28,6 +28,7 @@ class cellForCreateCat: UICollectionViewCell {
         imageCategory.easy.layout(CenterY(), CenterX(), Height(100), Width(100))
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

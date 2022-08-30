@@ -8,7 +8,7 @@
 import UIKit
 import EasyPeasy
 
-class CustomCell: UITableViewCell {
+final class MainBudgetCell: UITableViewCell {
     
     var titleLabel = UILabel(text: "", font: .avenirNextDemiBold20(), alignment: .left)
     var dateLabel = UILabel()
@@ -26,8 +26,6 @@ class CustomCell: UITableViewCell {
     override var frame: CGRect {
         didSet {
             var newFrame = frame
-           // newFrame.origin.x += 5
-            //newFrame.size.width -= 10
             newFrame.size.height -= 10
             super.frame = newFrame
         }
@@ -38,8 +36,8 @@ class CustomCell: UITableViewCell {
         
         layer.borderWidth = 1
         layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-        //layer.cornerRadius = 10
         clipsToBounds = true
+        selectionStyle = .none
         
         addSubview(titleLabel)
         addSubview(dateLabel)
@@ -54,6 +52,7 @@ class CustomCell: UITableViewCell {
         dateLabel.easy.layout(Right(15), Bottom(10))
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

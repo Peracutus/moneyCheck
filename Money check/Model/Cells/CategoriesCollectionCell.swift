@@ -26,7 +26,7 @@ class CategoriesCollectionCell: UICollectionViewCell {
         return imageView
     }()
     
-     let nameLabel = UILabel(text: "Transport and transport", font: .avenirNextDemiBold20(), alignment: .center)
+     let nameLabel = UILabel(text: "Transport", font: .avenirNextDemiBold20(), alignment: .center)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,6 +42,7 @@ class CategoriesCollectionCell: UICollectionViewCell {
         nameLabel.easy.layout( Left(5), Right(5), Height(30), Bottom().to(contentView.safeAreaLayoutGuide, .bottom))
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

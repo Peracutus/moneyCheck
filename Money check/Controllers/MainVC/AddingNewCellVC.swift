@@ -121,12 +121,12 @@ class AddingNewCellVC: UIViewController {
             return
         }
         
-//        print(imageView.image?.accessibilityHint)
-        guard let imageText = imageView.image?.accessibilityIdentifier else {return }
+//        print(imageView.image?.accessibilityHint!)
+//        guard let imageText = imageView.image?.accessibilityIdentifier else {return }
         
         let cellInfo = CellItems(titleLabel: titleTextField,
                                  category: textWithPicker.text!,
-                                 categoryImage: imageText,
+                                 categoryImage: imageView.description,
                                  date: constants.dateView.date,
                                  value: Float(amountTextField)!,
                                  type: Int32(constants.typePick.selectedSegmentIndex))
@@ -138,10 +138,8 @@ class AddingNewCellVC: UIViewController {
     }
     
     @objc private func editingModel(cellModel: CellItems) {
-        
         navigationController?.pushViewController(main, animated: true)
     }
-    
     
     private func showError(title:String, message:String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

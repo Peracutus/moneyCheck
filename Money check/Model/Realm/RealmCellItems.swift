@@ -7,7 +7,8 @@
 
 import RealmSwift
 
-class CellItems: Object {
+final class CellItems: Object {
+    
     // MARK: - Entry Persisted Properties
     
     @objc dynamic var titleLabel: String?
@@ -20,9 +21,9 @@ class CellItems: Object {
     
     @objc dynamic var value: Float = 0.0
     
-    @objc dynamic var type: Int32 = 0
+    @objc dynamic var weekday: Int = 1
     
-    //@objc dynamic var weekDay: Int = 0
+    @objc dynamic var type: Int32 = 0
     
     // MARK: - Custom Init to Add an CellItems
     

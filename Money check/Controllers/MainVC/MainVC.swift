@@ -33,23 +33,18 @@ class MainVC: UITableViewController {
     
     private func navigationUI() {
         navigationItem.title = "Personal finance"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "slider.horizontal.3")!, style: .plain, target: self, action: #selector(settingsMenu))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus")!, style: .plain, target: self, action: #selector(plusPushButton))
     }
 
     private func setupTableUI() {
         view.backgroundColor = UIColor(named: "bgColor")
         tableView.bounces = false
-        tableView.register(CustomCell.self, forCellReuseIdentifier: "CheckListCell")
+        tableView.register(MainBudgetCell.self, forCellReuseIdentifier: "CheckListCell")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
     }
     
-    @objc private func settingsMenu() {
-        let menu = MenuVC()
-        navigationController?.pushViewController(menu, animated: true)
-    }
     @objc private func plusPushButton() {
         let secondVC = AddingNewCellVC()
         navigationController?.pushViewController(secondVC, animated: true)
