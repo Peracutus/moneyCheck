@@ -6,7 +6,6 @@ target 'Money check' do
   use_frameworks!
 
   # Pods for Money check
-pod 'EasyPeasy'
 pod 'RealmSwift'
 pod 'Charts'
 end

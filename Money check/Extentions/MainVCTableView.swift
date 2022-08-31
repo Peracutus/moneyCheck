@@ -117,8 +117,8 @@ extension MainVC {
         cell.categoryLabel.text =  sortedItem.category
         cell.amountLabel.text = (sortedItem.type == 0 ? "+ " : "- ") + String(constans.separatedNumber(sortedItem.value)) + " ₽"
         cell.amountLabel.textColor = (sortedItem.type) == 0 ? .greenColor : .redColor
-        guard let image = sortedItem.categoryImage else { return }
-        cell.categoryImageView.image = UIImage(named: image)
+//        guard let image = sortedItem.categoryImage else { return }
+        cell.categoryImageView.image = UIImage(named: sortedItem.categoryImage ?? "Beer")
     }
     
     //MARK:- buttons

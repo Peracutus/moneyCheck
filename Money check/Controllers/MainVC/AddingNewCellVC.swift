@@ -87,8 +87,8 @@ class AddingNewCellVC: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(generalView)
         generalView.addSubview(stack)
-        generalView.addSubview(confirmBtn)
         generalView.addSubview(imageView)
+        view.addSubview(confirmBtn)
         
         scrollView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         scrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
