@@ -47,9 +47,9 @@ class NewVC: UIViewController {
         
         taskArray = localRealm.objects(TaskModel.self)
         
-        calendar.delegate = self
-        calendar.dataSource = self
-        calendar.scope = .week
+//        calendar.delegate = self
+//        calendar.dataSource = self
+//        calendar.scope = .week
         showHideButton.addTarget(self, action: #selector(showButtonTapped), for: .touchUpInside)
         
         tableView.delegate = self
@@ -63,24 +63,24 @@ class NewVC: UIViewController {
     }
     
     @objc private func showButtonTapped() {
-        if calendar.scope == .week {
-            calendar.setScope(.month, animated: true)
-            showHideButton.setTitle("Close Calendar", for: .normal)
-        } else {
-            calendar.setScope(.week, animated: true)
-            showHideButton.setTitle("Open Calendar", for: .normal)
-        }
+//        if calendar.scope == .week {
+////            calendar.setScope(.month, animated: true)
+//            showHideButton.setTitle("Close Calendar", for: .normal)
+//        } else {
+////            calendar.setScope(.week, animated: true)
+//            showHideButton.setTitle("Open Calendar", for: .normal)
+//        }
     }
     
     //MARK: SwipeGestureRecognizer
     private func swipeActions() {
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe ))
         swipeUp.direction = .up
-        calendar.addGestureRecognizer(swipeUp)
+//        calendar.addGestureRecognizer(swipeUp)
         
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe ))
         swipeDown.direction = .down
-        calendar.addGestureRecognizer(swipeDown)
+//        calendar.addGestureRecognizer(swipeDown)
     }
     
     @objc private func handleSwipe(gesture: UISwipeGestureRecognizer) {
@@ -138,21 +138,10 @@ extension NewVC: UITableViewDelegate, UITableViewDataSource {
         
         let editingRow = taskArray[indexPath.row]
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, completionHandler in
-            RealmManager.shared.realmDeleteTask(editingRow)
+//            RealmManager.shared.realmDeleteTask(editingRow)
             tableView.reloadData()
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
-    }
-}
-
-extension NewVC: FSCalendarDataSource, FSCalendarDelegate {
-    func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
-        calendarHeight.constant = bounds.height
-        view.layoutIfNeeded()
-    }
-    
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        taskOnDate(date: date)
     }
 }
 
@@ -162,14 +151,14 @@ extension NewVC {
     
     func setConstraints() {
         
-        calendarHeight = NSLayoutConstraint(item: calendar, attribute:  .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 300)
-        calendar.addConstraint(calendarHeight)
-        view.addSubview(calendar)
+//        calendarHeight = NSLayoutConstraint(item: calendar, attribute:  .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 300)
+//        calendar.addConstraint(calendarHeight)
+//        view.addSubview(calendar)
         view.addSubview(tableView)
-        calendar.easy.layout(Top(5).to(view.safeAreaLayoutGuide, .top), Left(0), Right(0))
-        tableView.easy.layout(Top(20).to(calendar, .bottom), Left(), Right(), Bottom().to(view.safeAreaLayoutGuide, .bottom))
-        view.addSubview(showHideButton)
-        showHideButton.easy.layout(Top(0).to(calendar, .bottom), Width(100), Height(20), Left(15))
+//        calendar.easy.layout(Top(5).to(view.safeAreaLayoutGuide, .top), Left(0), Right(0))
+//        tableView.easy.layout(Top(20).to(calendar, .bottom), Left(), Right(), Bottom().to(view.safeAreaLayoutGuide, .bottom))
+//        view.addSubview(showHideButton)
+//        showHideButton.easy.layout(Top(0).to(calendar, .bottom), Width(100), Height(20), Left(15))
     }
     
     private func navigationUI() {
@@ -186,7 +175,7 @@ extension NewVC {
 extension  NewVC:PressReadyTaskButtonProtocol {
     func readyButtonTapped(indexPath: IndexPath) {
         let task = taskArray[indexPath.row]
-        RealmManager.shared.updateReadyButton(task: task, bool: !task.taskReady)
+//        RealmManager.shared.updateReadyButton(task: task, bool: !task.taskReady)
         tableView.reloadData()
     }
 }

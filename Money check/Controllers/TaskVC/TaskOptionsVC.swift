@@ -43,7 +43,7 @@ class TaskOptionsVC: UITableViewController {
         
         taskModel.taskColor = hexColorCell
         
-        RealmManager.shared.saveTaskModel(model: taskModel)
+//        RealmManager.shared.saveTaskModel(model: taskModel)
         taskModel = TaskModel()
             alertSave(title: "Success ", message: nil)
             tableView.reloadData()

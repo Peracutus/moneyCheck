@@ -30,6 +30,13 @@
 		B53AB2A928BF92360081CD8B /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB2A828BF92360081CD8B /* InfoViewModel.swift */; };
 		B53AB2AB28BF92460081CD8B /* MenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB2AA28BF92460081CD8B /* MenuTableCell.swift */; };
 		B53AB2AD28BF924B0081CD8B /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB2AC28BF924B0081CD8B /* InfoCell.swift */; };
+		B53AB2AF28BF93A80081CD8B /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB2AE28BF93A80081CD8B /* TaskModel.swift */; };
+		B53AB2B828BF93CE0081CD8B /* ColorTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB2B128BF93CE0081CD8B /* ColorTVCell.swift */; };
+		B53AB2B928BF93CE0081CD8B /*  AlertSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB2B328BF93CE0081CD8B /*  AlertSave.swift */; };
+		B53AB2BA28BF93CE0081CD8B /* AlertForCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB2B428BF93CE0081CD8B /* AlertForCellName.swift */; };
+		B53AB2BB28BF93CE0081CD8B /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB2B528BF93CE0081CD8B /* AlertDate.swift */; };
+		B53AB2BC28BF93CE0081CD8B /* TasksVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB2B628BF93CE0081CD8B /* TasksVCCell.swift */; };
+		B53AB2BD28BF93CE0081CD8B /* CustomTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB2B728BF93CE0081CD8B /* CustomTaskCell.swift */; };
 		B540EA032704D97100C2A17A /* СellForCreateCat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B540EA022704D97100C2A17A /* СellForCreateCat.swift */; };
 		B540EA0527062D9600C2A17A /* CategoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B540EA0427062D9600C2A17A /* CategoryProtocol.swift */; };
 		B54ECCF426BAE88200A7640C /* empty-face.json in Resources */ = {isa = PBXBuildFile; fileRef = B54ECCF326BAE88200A7640C /* empty-face.json */; };
@@ -79,6 +86,13 @@
 		B53AB2A828BF92360081CD8B /* InfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
 		B53AB2AA28BF92460081CD8B /* MenuTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableCell.swift; sourceTree = "<group>"; };
 		B53AB2AC28BF924B0081CD8B /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		B53AB2AE28BF93A80081CD8B /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		B53AB2B128BF93CE0081CD8B /* ColorTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTVCell.swift; sourceTree = "<group>"; };
+		B53AB2B328BF93CE0081CD8B /*  AlertSave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = " AlertSave.swift"; sourceTree = "<group>"; };
+		B53AB2B428BF93CE0081CD8B /* AlertForCellName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertForCellName.swift; sourceTree = "<group>"; };
+		B53AB2B528BF93CE0081CD8B /* AlertDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDate.swift; sourceTree = "<group>"; };
+		B53AB2B628BF93CE0081CD8B /* TasksVCCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksVCCell.swift; sourceTree = "<group>"; };
+		B53AB2B728BF93CE0081CD8B /* CustomTaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTaskCell.swift; sourceTree = "<group>"; };
 		B540EA022704D97100C2A17A /* СellForCreateCat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СellForCreateCat.swift"; sourceTree = "<group>"; };
 		B540EA0427062D9600C2A17A /* CategoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryProtocol.swift; sourceTree = "<group>"; };
 		B54ECCF326BAE88200A7640C /* empty-face.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "empty-face.json"; sourceTree = "<group>"; };
@@ -187,6 +201,7 @@
 		B538CDAA26FD0F9A0010264D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B53AB2B028BF93CE0081CD8B /* TaskCells */,
 				B56C70CF272DA1CC00D595BC /* Realm */,
 				B50786D62700FFCB00F9FD30 /* Cells */,
 			);
@@ -230,6 +245,27 @@
 			path = TaskVC;
 			sourceTree = "<group>";
 		};
+		B53AB2B028BF93CE0081CD8B /* TaskCells */ = {
+			isa = PBXGroup;
+			children = (
+				B53AB2B128BF93CE0081CD8B /* ColorTVCell.swift */,
+				B53AB2B228BF93CE0081CD8B /* Alerts */,
+				B53AB2B628BF93CE0081CD8B /* TasksVCCell.swift */,
+				B53AB2B728BF93CE0081CD8B /* CustomTaskCell.swift */,
+			);
+			path = TaskCells;
+			sourceTree = "<group>";
+		};
+		B53AB2B228BF93CE0081CD8B /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				B53AB2B328BF93CE0081CD8B /*  AlertSave.swift */,
+				B53AB2B428BF93CE0081CD8B /* AlertForCellName.swift */,
+				B53AB2B528BF93CE0081CD8B /* AlertDate.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
 		B54ECCF226BAE88200A7640C /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				B5905AD826B86DEC0055617F /* RealmCellItems.swift */,
+				B53AB2AE28BF93A80081CD8B /* TaskModel.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -433,21 +470,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B53AB2B928BF93CE0081CD8B /*  AlertSave.swift in Sources */,
 				B53AB2A028BF92040081CD8B /* ColorVC.swift in Sources */,
 				B5905AD226B6B4C80055617F /* AddingNewCellVC.swift in Sources */,
 				B53AB2A128BF92040081CD8B /* TaskManagerVC.swift in Sources */,
 				B538CDAE26FD13D50010264D /* UIStackView.swift in Sources */,
 				B54ECCF826BC551600A7640C /* MainVCTableView.swift in Sources */,
 				B5905AB726B67C340055617F /* MainVC.swift in Sources */,
+				B53AB2BD28BF93CE0081CD8B /* CustomTaskCell.swift in Sources */,
 				B56C70D1272DA2C400D595BC /* RealmManager.swift in Sources */,
 				B53AB29F28BF92040081CD8B /* TaskOptionsVC.swift in Sources */,
 				B50786EC27039D0F00F9FD30 /* PopUpVC.swift in Sources */,
 				B5905AD726B826990055617F /* KeyboardAppearance.swift in Sources */,
 				B50786E327032BA300F9FD30 /* CategoriesCollectionView.swift in Sources */,
+				B53AB2BB28BF93CE0081CD8B /* AlertDate.swift in Sources */,
 				B538CDB026FDF4EB0010264D /* UIButton.swift in Sources */,
 				B50786D127004D7800F9FD30 /* UIColor.swift in Sources */,
+				B53AB2BA28BF93CE0081CD8B /* AlertForCellName.swift in Sources */,
 				B5E545612707A41700C36C7B /* MainDateSorting.swift in Sources */,
 				B59529A7275514F400434FC5 /* Date.swift in Sources */,
+				B53AB2B828BF93CE0081CD8B /* ColorTVCell.swift in Sources */,
 				B5905ABD26B67C350055617F /* Money_check.xcdatamodeld in Sources */,
 				B5905ACD26B67D510055617F /* Constans.swift in Sources */,
 				B50786E52703498400F9FD30 /* CategoriesCollectionCell.swift in Sources */,
@@ -455,6 +497,8 @@
 				B53AB2AB28BF92460081CD8B /* MenuTableCell.swift in Sources */,
 				B53AB2A928BF92360081CD8B /* InfoViewModel.swift in Sources */,
 				B5905AB326B67C340055617F /* AppDelegate.swift in Sources */,
+				B53AB2AF28BF93A80081CD8B /* TaskModel.swift in Sources */,
+				B53AB2BC28BF93CE0081CD8B /* TasksVCCell.swift in Sources */,
 				B53AB2A728BF922E0081CD8B /* MenuModel.swift in Sources */,
 				B50786D327004D8400F9FD30 /* UILabel.swift in Sources */,
 				B50786D527005EA100F9FD30 /* UIDatePicker.swift in Sources */,
