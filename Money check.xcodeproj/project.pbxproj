@@ -21,6 +21,15 @@
 		B538CDAE26FD13D50010264D /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538CDAD26FD13D50010264D /* UIStackView.swift */; };
 		B538CDB026FDF4EB0010264D /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538CDAF26FDF4EB0010264D /* UIButton.swift */; };
 		B538CDB226FDFD9B0010264D /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538CDB126FDFD9B0010264D /* UITextField.swift */; };
+		B53AB29F28BF92040081CD8B /* TaskOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB29C28BF92040081CD8B /* TaskOptionsVC.swift */; };
+		B53AB2A028BF92040081CD8B /* ColorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB29D28BF92040081CD8B /* ColorVC.swift */; };
+		B53AB2A128BF92040081CD8B /* TaskManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB29E28BF92040081CD8B /* TaskManagerVC.swift */; };
+		B53AB2A328BF92110081CD8B /* IntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB2A228BF92110081CD8B /* IntroductionView.swift */; };
+		B53AB2A528BF92190081CD8B /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB2A428BF92190081CD8B /* MenuVC.swift */; };
+		B53AB2A728BF922E0081CD8B /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB2A628BF922E0081CD8B /* MenuModel.swift */; };
+		B53AB2A928BF92360081CD8B /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB2A828BF92360081CD8B /* InfoViewModel.swift */; };
+		B53AB2AB28BF92460081CD8B /* MenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB2AA28BF92460081CD8B /* MenuTableCell.swift */; };
+		B53AB2AD28BF924B0081CD8B /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB2AC28BF924B0081CD8B /* InfoCell.swift */; };
 		B540EA032704D97100C2A17A /* СellForCreateCat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B540EA022704D97100C2A17A /* СellForCreateCat.swift */; };
 		B540EA0527062D9600C2A17A /* CategoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B540EA0427062D9600C2A17A /* CategoryProtocol.swift */; };
 		B54ECCF426BAE88200A7640C /* empty-face.json in Resources */ = {isa = PBXBuildFile; fileRef = B54ECCF326BAE88200A7640C /* empty-face.json */; };
@@ -61,6 +70,15 @@
 		B538CDAD26FD13D50010264D /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		B538CDAF26FDF4EB0010264D /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		B538CDB126FDFD9B0010264D /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		B53AB29C28BF92040081CD8B /* TaskOptionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskOptionsVC.swift; sourceTree = "<group>"; };
+		B53AB29D28BF92040081CD8B /* ColorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorVC.swift; sourceTree = "<group>"; };
+		B53AB29E28BF92040081CD8B /* TaskManagerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskManagerVC.swift; sourceTree = "<group>"; };
+		B53AB2A228BF92110081CD8B /* IntroductionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionView.swift; sourceTree = "<group>"; };
+		B53AB2A428BF92190081CD8B /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		B53AB2A628BF922E0081CD8B /* MenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		B53AB2A828BF92360081CD8B /* InfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
+		B53AB2AA28BF92460081CD8B /* MenuTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableCell.swift; sourceTree = "<group>"; };
+		B53AB2AC28BF924B0081CD8B /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		B540EA022704D97100C2A17A /* СellForCreateCat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СellForCreateCat.swift"; sourceTree = "<group>"; };
 		B540EA0427062D9600C2A17A /* CategoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryProtocol.swift; sourceTree = "<group>"; };
 		B54ECCF326BAE88200A7640C /* empty-face.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "empty-face.json"; sourceTree = "<group>"; };
@@ -109,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				B5905ACF26B69FAA0055617F /* MainBudgetCell.swift */,
+				B53AB2AC28BF924B0081CD8B /* InfoCell.swift */,
+				B53AB2AA28BF92460081CD8B /* MenuTableCell.swift */,
 				B540EA022704D97100C2A17A /* СellForCreateCat.swift */,
 				B50786E42703498400F9FD30 /* CategoriesCollectionCell.swift */,
 			);
@@ -200,6 +220,16 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		B53AB29B28BF92040081CD8B /* TaskVC */ = {
+			isa = PBXGroup;
+			children = (
+				B53AB29C28BF92040081CD8B /* TaskOptionsVC.swift */,
+				B53AB29D28BF92040081CD8B /* ColorVC.swift */,
+				B53AB29E28BF92040081CD8B /* TaskManagerVC.swift */,
+			);
+			path = TaskVC;
+			sourceTree = "<group>";
+		};
 		B54ECCF226BAE88200A7640C /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +285,8 @@
 			children = (
 				B5E5456A2708A9DB00C36C7B /* Header */,
 				B5905ACC26B67D510055617F /* Constans.swift */,
+				B53AB2A628BF922E0081CD8B /* MenuModel.swift */,
+				B53AB2A828BF92360081CD8B /* InfoViewModel.swift */,
 				B50786E62703936700F9FD30 /* CustomView.swift */,
 			);
 			path = Views;
@@ -263,6 +295,9 @@
 		B5905ADA26B86FEB0055617F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B53AB2A228BF92110081CD8B /* IntroductionView.swift */,
+				B53AB2A428BF92190081CD8B /* MenuVC.swift */,
+				B53AB29B28BF92040081CD8B /* TaskVC */,
 				B50786EA27039C7900F9FD30 /* MainVC */,
 			);
 			path = Controllers;
@@ -398,11 +433,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B53AB2A028BF92040081CD8B /* ColorVC.swift in Sources */,
 				B5905AD226B6B4C80055617F /* AddingNewCellVC.swift in Sources */,
+				B53AB2A128BF92040081CD8B /* TaskManagerVC.swift in Sources */,
 				B538CDAE26FD13D50010264D /* UIStackView.swift in Sources */,
 				B54ECCF826BC551600A7640C /* MainVCTableView.swift in Sources */,
 				B5905AB726B67C340055617F /* MainVC.swift in Sources */,
 				B56C70D1272DA2C400D595BC /* RealmManager.swift in Sources */,
+				B53AB29F28BF92040081CD8B /* TaskOptionsVC.swift in Sources */,
 				B50786EC27039D0F00F9FD30 /* PopUpVC.swift in Sources */,
 				B5905AD726B826990055617F /* KeyboardAppearance.swift in Sources */,
 				B50786E327032BA300F9FD30 /* CategoriesCollectionView.swift in Sources */,
@@ -414,11 +452,15 @@
 				B5905ACD26B67D510055617F /* Constans.swift in Sources */,
 				B50786E52703498400F9FD30 /* CategoriesCollectionCell.swift in Sources */,
 				B538CDB226FDFD9B0010264D /* UITextField.swift in Sources */,
+				B53AB2AB28BF92460081CD8B /* MenuTableCell.swift in Sources */,
+				B53AB2A928BF92360081CD8B /* InfoViewModel.swift in Sources */,
 				B5905AB326B67C340055617F /* AppDelegate.swift in Sources */,
+				B53AB2A728BF922E0081CD8B /* MenuModel.swift in Sources */,
 				B50786D327004D8400F9FD30 /* UILabel.swift in Sources */,
 				B50786D527005EA100F9FD30 /* UIDatePicker.swift in Sources */,
 				B5E5456C2708A9F400C36C7B /* HeaderTableView.swift in Sources */,
 				B540EA0527062D9600C2A17A /* CategoryProtocol.swift in Sources */,
+				B53AB2A528BF92190081CD8B /* MenuVC.swift in Sources */,
 				B538CDA326F641E80010264D /* ChartBalanceVC.swift in Sources */,
 				B50786E927039C0400F9FD30 /* UIViewController.swift in Sources */,
 				B50786E72703936700F9FD30 /* CustomView.swift in Sources */,
@@ -426,7 +468,9 @@
 				B5905AD926B86DEC0055617F /* RealmCellItems.swift in Sources */,
 				B50786CF270027E200F9FD30 /* UIFont.swift in Sources */,
 				B5905AD026B69FAA0055617F /* MainBudgetCell.swift in Sources */,
+				B53AB2AD28BF924B0081CD8B /* InfoCell.swift in Sources */,
 				B50786DB27010A9500F9FD30 /* PressButtonProtocol.swift in Sources */,
+				B53AB2A328BF92110081CD8B /* IntroductionView.swift in Sources */,
 				B5905AB526B67C340055617F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
