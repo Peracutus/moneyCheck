@@ -5,7 +5,6 @@
 //  Created by Roman on 26.09.2021.
 //
 import UIKit
-import EasyPeasy
 
 extension UIDatePicker {
     convenience init(date: UIDatePicker.Mode) {
@@ -22,7 +21,7 @@ extension UIDatePicker {
         self.layer.borderWidth = 1
         self.locale = Locale.current
         self.timeZone = .current
-        self.easy.layout(Height(40))
+        self.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 }
 

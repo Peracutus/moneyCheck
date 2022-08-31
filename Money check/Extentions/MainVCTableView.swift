@@ -6,17 +6,11 @@
 //
 
 import UIKit
-import Lottie
-import EasyPeasy
 import RealmSwift
 
 extension MainVC {
     
     //MARK: - Appearing footer if realm objects = 0
-    
-    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return animateEmptyData()
-    }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return RealmManager.shared.realm.objects(CellItems.self).isEmpty ? 500 : 0
@@ -30,7 +24,8 @@ extension MainVC {
         let label = UILabel(text: dateFormatter(path: itemDates[section], format: "dd MMMM"), font: .avenirNextDemiBold20(), alignment: .center)
         
         view.addSubview(label)
-        label.easy.layout(CenterX(), Bottom())
+        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        label.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
         if section == 0 {
             let balanceStack = UIStackView(arrangedSubviews: [
@@ -100,7 +95,6 @@ extension MainVC {
             editCellInfo.constants.dateView.date = index.date!
             editCellInfo.confirmBtn.setTitle("Edit", for: .normal)
             editCellInfo.confirmBtn.backgroundColor = .blueColor
-            //editCellInfo.editStyle = true
             let navController = UINavigationController(rootViewController: editCellInfo)
             editCellInfo.navigationItem.title = "Editing cell"
             self.present(navController, animated: true, completion: nil)
@@ -124,7 +118,7 @@ extension MainVC {
         cell.amountLabel.text = (sortedItem.type == 0 ? "+ " : "- ") + String(constans.separatedNumber(sortedItem.value)) + " ₽"
         cell.amountLabel.textColor = (sortedItem.type) == 0 ? .greenColor : .redColor
         guard let image = sortedItem.categoryImage else { return }
-        cell.categoryImageView.image = UIImage(named: image.description)
+        cell.categoryImageView.image = UIImage(named: image)
     }
     
     //MARK:- buttons

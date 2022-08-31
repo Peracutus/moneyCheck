@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import EasyPeasy
 
 final class MainBudgetCell: UITableViewCell {
     
@@ -17,7 +16,6 @@ final class MainBudgetCell: UITableViewCell {
     var categoryImageView: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "plus_icon").withTintColor(.black))
         imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.borderColor = UIColor.black.cgColor
         imageView.clipsToBounds = true
         return imageView
@@ -39,17 +37,26 @@ final class MainBudgetCell: UITableViewCell {
         clipsToBounds = true
         selectionStyle = .none
         
-        addSubview(titleLabel)
-        addSubview(dateLabel)
-        addSubview(amountLabel)
-        addSubview(categoryImageView)
-        addSubview(categoryLabel)
-        
-        categoryImageView.easy.layout(Height(60), Width(60), Left(15),CenterY())
-        categoryLabel.easy.layout(Left(15).to(categoryImageView, .right), Bottom(10))
-        titleLabel.easy.layout(Left(15).to(categoryImageView, .right), Top(10))
-        amountLabel.easy.layout(Right(15), Top(10), Bottom().to(dateLabel, .top))
-        dateLabel.easy.layout(Right(15), Bottom(10))
+        [titleLabel, dateLabel, amountLabel, categoryLabel, categoryImageView, categoryLabel].forEach { item in
+            contentView.addSubview(item)
+            item.translatesAutoresizingMaskIntoConstraints = false
+        }
+        categoryImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        categoryImageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        categoryImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        categoryImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 15).isActive = true
+
+        titleLabel.leftAnchor.constraint(equalTo: categoryImageView.rightAnchor, constant: 15).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
+       
+        categoryLabel.leftAnchor.constraint(equalTo: categoryImageView.rightAnchor, constant: 15).isActive = true
+        categoryLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+       
+        amountLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -15).isActive = true
+        amountLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
+       
+        dateLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -15).isActive = true
+        dateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
     }
     
     @available(*, unavailable)

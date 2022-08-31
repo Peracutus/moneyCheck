@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import EasyPeasy
 
 extension UITextField {
     convenience init(placeholder: String) {
@@ -19,6 +18,7 @@ extension UITextField {
         self.borderStyle = .roundedRect
         self.keyboardType = .numbersAndPunctuation
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.easy.layout(Height(40),Width(220))
+        self.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        self.widthAnchor.constraint(equalToConstant: 220).isActive = true
     }
 }

@@ -6,14 +6,14 @@
 //
 
 import UIKit
-import EasyPeasy
 
-final class cellForCreateCat: UICollectionViewCell {
+final class СellForCreateCat: UICollectionViewCell {
     
     static let identifier = "CellForCreateCat"
     
-     var imageCategory: UIImageView = {
+    var imageCategory: UIImageView = {
         let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
@@ -25,7 +25,10 @@ final class cellForCreateCat: UICollectionViewCell {
         contentView.layer.cornerRadius = 10
         contentView.backgroundColor = .white
         clipsToBounds = true
-        imageCategory.easy.layout(CenterY(), CenterX(), Height(100), Width(100))
+        imageCategory.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        imageCategory.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        imageCategory.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        imageCategory.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     @available(*, unavailable)

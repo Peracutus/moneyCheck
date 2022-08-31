@@ -3,9 +3,8 @@
 //  Money check
 //
 //  Created by Roman on 28.09.2021.
+
 import UIKit
-import EasyPeasy
-import Lottie
 
 extension UIViewController {
     
@@ -87,33 +86,6 @@ extension UIViewController {
                        animations: {
                         lastCell?.transform = CGAffineTransform.identity
                        })
-    }
-    
-    
-    
-    
-    func animateEmptyData() -> UIView {
-        let animationView = AnimationView()
-        let viewBG = UIView()
-        let label = UILabel(text: "No Transaction Yet!", font: .avenirNextDemiBold20(), alignment: .center)
-        let bottomLabel = UILabel(text: "Add a transaction ", font: .avenirNextDemiBold20(), alignment: .center) // and it will show up here
-        let animation = Animation.named("empty-face")
-        animationView.animation = animation
-        animationView.contentMode = .scaleAspectFit
-        animationView.backgroundBehavior = .pauseAndRestore
-        animationView.loopMode = .loop
-        animationView.play()
-        
-        animationView.translatesAutoresizingMaskIntoConstraints = false
-        viewBG.addSubview(animationView)
-        viewBG.addSubview(label)
-        viewBG.addSubview(bottomLabel)
-        animationView.easy.layout(Width().like(viewBG), Height().like(viewBG), Center())
-        label.easy.layout(CenterX(), Top(20))
-        bottomLabel.easy.layout(Bottom().to(viewBG), CenterX(), Width().like(viewBG, .width))
-        viewBG.easy.layout(Height(400), Width(400), CenterY(0), CenterX(0))
-    
-        return viewBG
     }
     
     func dateFormatter(path: Date, format: String) -> String{

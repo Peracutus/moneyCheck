@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import EasyPeasy
 
 struct Constants {
     
@@ -26,7 +25,10 @@ struct Constants {
         let button = UIButton(color: color, name: name)
         button.addTarget(self, action: selector, for: .touchUpInside)
         view.addSubview(button)
-        button.easy.layout(Center(),Edges(5))
+        button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 5).isActive = true
+        button.topAnchor.constraint(equalTo: view.topAnchor, constant: 5).isActive = true
+        button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5).isActive = true
+        button.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -5).isActive = true
         return view
     }
     
@@ -74,7 +76,8 @@ struct Constants {
             NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.bold)
         ], for: .normal)
-        sc.easy.layout(Height(40),Width(220))
+        sc.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        sc.widthAnchor.constraint(equalToConstant: 220).isActive = true
         return sc
     }()
     

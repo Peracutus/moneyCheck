@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import EasyPeasy
 import Foundation
 
 class PopUpVC: UIViewController, UIGestureRecognizerDelegate {
@@ -15,6 +14,7 @@ class PopUpVC: UIViewController, UIGestureRecognizerDelegate {
     
     private var popUpView: UIView = {
        let popUp = UIView()
+        popUp.translatesAutoresizingMaskIntoConstraints = false
         popUp.layer.cornerRadius = 15
         popUp.layer.backgroundColor = #colorLiteral(red: 0.9888455243, green: 1, blue: 0.9262188061, alpha: 1)
         popUp.layer.borderWidth = 2
@@ -74,11 +74,30 @@ class PopUpVC: UIViewController, UIGestureRecognizerDelegate {
         popUpView.addSubview(errorLabel)
         popUpView.addSubview(addButton)
         
-        popUpView.easy.layout(CenterX(),CenterY(), Left(20), Right(20), Height(300))
-        titleLabel.easy.layout(CenterX(), Top(10))
-        categoryTextField.easy.layout(Top(10).to(titleLabel, .bottom), Height(40), Left(20), Right(20))
-        errorLabel.easy.layout(Bottom(5).to(addButton, .top), CenterX(), Left(), Right(), Height(50))
-        addButton.easy.layout(Bottom(10), CenterX(), Left(50), Right(50), Height(40))
+        popUpView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        popUpView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        popUpView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        popUpView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        popUpView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        
+        titleLabel.centerXAnchor.constraint(equalTo: popUpView.centerXAnchor).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: popUpView.topAnchor, constant: 10).isActive = true
+        
+        categoryTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
+        categoryTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        categoryTextField.leftAnchor.constraint(equalTo: popUpView.leftAnchor, constant: 20).isActive = true
+        categoryTextField.rightAnchor.constraint(equalTo: popUpView.rightAnchor, constant: -20).isActive = true
+        
+        errorLabel.bottomAnchor.constraint(equalTo: addButton.topAnchor, constant: -5).isActive = true
+        errorLabel.centerXAnchor.constraint(equalTo: popUpView.centerXAnchor).isActive = true
+        errorLabel.rightAnchor.constraint(equalTo: popUpView.rightAnchor).isActive = true
+        errorLabel.leftAnchor.constraint(equalTo: popUpView.leftAnchor).isActive = true
+        errorLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        addButton.bottomAnchor.constraint(equalTo: popUpView.bottomAnchor, constant: -10).isActive = true
+        addButton.leftAnchor.constraint(equalTo: popUpView.leftAnchor, constant: 50).isActive = true
+        addButton.rightAnchor.constraint(equalTo: popUpView.rightAnchor, constant: -50).isActive = true
+        addButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 }
 
@@ -95,7 +114,7 @@ extension PopUpVC: UICollectionViewDelegate, UICollectionViewDataSource {
         
         collectionView = UICollectionView(frame: .infinite, collectionViewLayout: flowLayout)
         guard let collectionView = collectionView else {return}
-        collectionView.register(cellForCreateCat.self, forCellWithReuseIdentifier: cellForCreateCat.identifier)
+        collectionView.register(СellForCreateCat.self, forCellWithReuseIdentifier: СellForCreateCat.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = #colorLiteral(red: 0.9888455243, green: 1, blue: 0.9262188061, alpha: 1)
@@ -104,7 +123,11 @@ extension PopUpVC: UICollectionViewDelegate, UICollectionViewDataSource {
         collectionView.allowsMultipleSelection = false
         collectionView.scrollIndicatorInsets = .zero
         popUpView.addSubview(collectionView)
-        collectionView.easy.layout(Bottom().to(errorLabel, .top), Left(), Right(), Top(10).to(categoryTextField, .bottom))
+        
+        collectionView.bottomAnchor.constraint(equalTo: errorLabel.topAnchor).isActive = true
+        collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        collectionView.topAnchor.constraint(equalTo: categoryTextField.bottomAnchor, constant: 10).isActive = true
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -112,7 +135,7 @@ extension PopUpVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellForCreateCat.identifier, for: indexPath) as! cellForCreateCat
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: СellForCreateCat.identifier, for: indexPath) as! СellForCreateCat
         cell.imageCategory.image = #imageLiteral(resourceName: "Hearts")
         return cell
     }

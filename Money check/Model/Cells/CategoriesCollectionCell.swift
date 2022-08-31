@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import EasyPeasy
 
 class CategoriesCollectionCell: UICollectionViewCell {
     
@@ -20,13 +19,14 @@ class CategoriesCollectionCell: UICollectionViewCell {
     
     static let identifier = "CategoriesCollectionCell"
     
-     let imageCategory: UIImageView = {
+    let imageCategory: UIImageView = {
         let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = #imageLiteral(resourceName: "Hearts")
         return imageView
     }()
     
-     let nameLabel = UILabel(text: "Transport", font: .avenirNextDemiBold20(), alignment: .center)
+    let nameLabel = UILabel(text: "Transport", font: .avenirNextDemiBold20(), alignment: .center)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,8 +38,16 @@ class CategoriesCollectionCell: UICollectionViewCell {
         contentView.backgroundColor = .white
         clipsToBounds = true
         nameLabel.numberOfLines = 2
-        imageCategory.easy.layout(Top(5), CenterX(), Height(70), Width(70))
-        nameLabel.easy.layout( Left(5), Right(5), Height(30), Bottom().to(contentView.safeAreaLayoutGuide, .bottom))
+        
+        imageCategory.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
+        imageCategory.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        imageCategory.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        imageCategory.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        
+        nameLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 5).isActive = true
+        nameLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -5).isActive = true
+        nameLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        nameLabel.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
     
     @available(*, unavailable)

@@ -6,9 +6,7 @@
 //
 
 import UIKit
-import EasyPeasy
 import RealmSwift
-import Lottie
 
 class MainVC: UITableViewController {
     

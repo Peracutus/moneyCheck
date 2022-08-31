@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import EasyPeasy
-import CoreData
 import RealmSwift
 
 class AddingNewCellVC: UIViewController {
@@ -25,6 +23,7 @@ class AddingNewCellVC: UIViewController {
     
     var imageView: UIImageView = {
         let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
         image.image = #imageLiteral(resourceName: "plus_icon").withTintColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
         image.layer.borderWidth = 2
         image.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -91,13 +90,31 @@ class AddingNewCellVC: UIViewController {
         generalView.addSubview(confirmBtn)
         generalView.addSubview(imageView)
         
-        scrollView.easy.layout(Left(),Right(),Top(),Bottom().to(view.safeAreaLayoutGuide, .bottom))
-        generalView.easy.layout(CenterX(),CenterY(),Height().like(scrollView, .height), Width().like(scrollView, .width), Bottom(10).to(scrollView, .bottom))
-        imageView.easy.layout(Right(10), Bottom(10).to(confirmBtn, .top), Left(10).to(stack2, .right), Height().like(imageView, .width))
+        scrollView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        scrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
-        stack.easy.layout(Top(20).to(view.safeAreaLayoutGuide, .top),Bottom(20).to(confirmBtn, .top),Left(20),Right())
-        confirmBtn.easy.layout(Left(20), Right(20),Bottom(100).to(generalView, .bottom),Height(50))
+        generalView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        generalView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        generalView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
+        generalView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        generalView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -10).isActive = true
         
+        imageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: confirmBtn.topAnchor, constant: -10).isActive = true
+        imageView.leftAnchor.constraint(equalTo: stack2.rightAnchor, constant: 10).isActive = true
+        imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
+        
+        stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        stack.bottomAnchor.constraint(equalTo: confirmBtn.topAnchor, constant: -20).isActive = true
+        stack.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20).isActive = true
+        stack.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
+        
+        confirmBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        confirmBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        confirmBtn.bottomAnchor.constraint(equalTo: generalView.bottomAnchor, constant: -20).isActive = true
+        confirmBtn.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
     @objc private func addCategory() {
@@ -121,12 +138,9 @@ class AddingNewCellVC: UIViewController {
             return
         }
         
-//        print(imageView.image?.accessibilityHint!)
-//        guard let imageText = imageView.image?.accessibilityIdentifier else {return }
-        
         let cellInfo = CellItems(titleLabel: titleTextField,
                                  category: textWithPicker.text!,
-                                 categoryImage: imageView.description,
+                                 categoryImage: imageView.image?.accessibilityLabel ?? "Beer",
                                  date: constants.dateView.date,
                                  value: Float(amountTextField)!,
                                  type: Int32(constants.typePick.selectedSegmentIndex))

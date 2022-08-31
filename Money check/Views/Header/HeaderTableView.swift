@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import EasyPeasy
 
 class HeaderTableViewCell: UITableViewHeaderFooterView {
    
@@ -26,6 +25,7 @@ class HeaderTableViewCell: UITableViewHeaderFooterView {
     
     private func setConstraints() {
         self.addSubview(headerLabel)
-        headerLabel.easy.layout(Left(25), Bottom())
+        headerLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 25).isActive = true
+        headerLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
 }

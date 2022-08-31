@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import EasyPeasy
 import Foundation
 
 
@@ -118,6 +117,9 @@ extension CategoriesCollectionView: UICollectionViewDelegate, UICollectionViewDa
  
     func setConstrantns() {
         view.addSubview(addButton)
-        addButton.easy.layout(Bottom(20).to(view.safeAreaLayoutGuide, .bottom), Right(20).to(view.safeAreaLayoutGuide, .right), Height(80), Width(80))
+        addButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        addButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -20).isActive = true
+        addButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        addButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
     }
 }

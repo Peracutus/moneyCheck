@@ -22,7 +22,7 @@
 		B538CDAE26FD13D50010264D /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538CDAD26FD13D50010264D /* UIStackView.swift */; };
 		B538CDB026FDF4EB0010264D /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538CDAF26FDF4EB0010264D /* UIButton.swift */; };
 		B538CDB226FDFD9B0010264D /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538CDB126FDFD9B0010264D /* UITextField.swift */; };
-		B540EA032704D97100C2A17A /* cellForCreateCat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B540EA022704D97100C2A17A /* cellForCreateCat.swift */; };
+		B540EA032704D97100C2A17A /* СellForCreateCat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B540EA022704D97100C2A17A /* СellForCreateCat.swift */; };
 		B540EA0527062D9600C2A17A /* CategoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B540EA0427062D9600C2A17A /* CategoryProtocol.swift */; };
 		B54ECCF426BAE88200A7640C /* empty-face.json in Resources */ = {isa = PBXBuildFile; fileRef = B54ECCF326BAE88200A7640C /* empty-face.json */; };
 		B54ECCF826BC551600A7640C /* MainVCTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54ECCF726BC551600A7640C /* MainVCTableView.swift */; };
@@ -60,7 +60,7 @@
 		B538CDAD26FD13D50010264D /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		B538CDAF26FDF4EB0010264D /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		B538CDB126FDFD9B0010264D /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
-		B540EA022704D97100C2A17A /* cellForCreateCat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellForCreateCat.swift; sourceTree = "<group>"; };
+		B540EA022704D97100C2A17A /* СellForCreateCat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СellForCreateCat.swift"; sourceTree = "<group>"; };
 		B540EA0427062D9600C2A17A /* CategoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryProtocol.swift; sourceTree = "<group>"; };
 		B54ECCF326BAE88200A7640C /* empty-face.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "empty-face.json"; sourceTree = "<group>"; };
 		B54ECCF726BC551600A7640C /* MainVCTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCTableView.swift; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				B5905ACF26B69FAA0055617F /* MainBudgetCell.swift */,
-				B540EA022704D97100C2A17A /* cellForCreateCat.swift */,
+				B540EA022704D97100C2A17A /* СellForCreateCat.swift */,
 				B50786E42703498400F9FD30 /* CategoriesCollectionCell.swift */,
 			);
 			path = Cells;
@@ -422,7 +422,7 @@
 				B538CDA326F641E80010264D /* ChartBalanceVC.swift in Sources */,
 				B50786E927039C0400F9FD30 /* UIViewController.swift in Sources */,
 				B50786E72703936700F9FD30 /* CustomView.swift in Sources */,
-				B540EA032704D97100C2A17A /* cellForCreateCat.swift in Sources */,
+				B540EA032704D97100C2A17A /* СellForCreateCat.swift in Sources */,
 				B5905AD926B86DEC0055617F /* RealmCellItems.swift in Sources */,
 				B50786CF270027E200F9FD30 /* UIFont.swift in Sources */,
 				B5905AD026B69FAA0055617F /* MainBudgetCell.swift in Sources */,
